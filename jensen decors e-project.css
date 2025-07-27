@@ -1,0 +1,429 @@
+* {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            background-color: rgb(134, 237, 233);
+            background: url(bg-image.jpg);
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            padding: 10px 20px;
+            z-index: 0;
+            position: relative;
+
+        }
+
+        .container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+
+            background-color: rgba(10, 10, 10);
+            z-index: 1;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 9;
+
+        }
+
+
+        .nav-links ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: rgb(255, 251, 249);
+            font-weight: bold;
+
+        }
+
+        .nav-links>ul>li>a:hover {
+
+            color: rgb(243, 97, 83);
+            padding-bottom: 23px;
+            margin-bottom: 45px;
+
+        }
+
+
+
+        .logo img {
+            width: 50px;
+        }
+
+        .icons {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            font-size: 18px;
+            color: rgb(253, 251, 249);
+            cursor: pointer;
+        }
+
+
+        /* Search box */
+        .search-box {
+            position: absolute;
+            top: 65px;
+            right: 50px;
+            box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.2);
+            display: none;
+            z-index: 4444;
+            background-color: white;
+
+        }
+
+        .search-box input {
+            padding: 10px 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .search-close {
+            cursor: pointer;
+            font-size: 20px;
+            color: rgb(216, 107, 35);
+            font-weight: bold;
+            position: absolute;
+            right: 10px;
+            bottom: 6px;
+        }
+
+
+        /* Sidebar Nav */
+        .sidebar {
+            position: fixed;
+            top: 53px;
+            right: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: rgb(255, 255, 255);
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+            transition: right 0.3s ease;
+            padding: 20px;
+            z-index: 5;
+        }
+
+        .active {
+            right: 0;
+        }
+
+        .slidebar {
+            right: 0;
+        }
+
+        /* isko hm is tarah se bhi likh sakte hain */
+
+        /* .slidebar.active {
+      right: 0;
+    } */
+
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: rgb(216, 107, 35);
+            font-size: 18px;
+        }
+
+        /* this class appears on side bar as cross icon (multiplication sign) when clicks on menu icon */
+
+        .close-btn {
+            font-size: 20px;
+            text-align: right;
+            cursor: pointer;
+            color: rgb(216, 107, 35);
+            margin-bottom: 20px;
+        }
+
+        /* Hide nav links on desktop */
+        .nav-links {
+            display: block;
+
+        }
+
+        /* .nav-links li {
+       position: relative;
+      
+    } */
+
+        .fa-bars {
+            display: none;
+        }
+
+        .fa-user {
+            padding-right: 17px;
+        }
+
+        .fa-angle-right:hover {
+            rotate: 90(deg);
+        }
+
+
+
+        /* tagline on picture */
+
+        .tagline {
+            position: absolute;
+            top: 300px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: rgb(245, 230, 153);
+            font-size: 4rem;
+            font-weight: bold;
+            text-align: center;
+            text-shadow: 5px 5px 3px rgba(188, 91, 35, 0.6);
+
+            width: 80%;
+        }
+
+        /* dropdown style */
+
+        .shop-menu {
+            position: relative;
+            z-index: 6;
+
+        }
+
+
+
+        .shop-menu .dropdown {
+            display: none;
+            position: absolute;
+            top: 40px;
+            left: -6px;
+
+            background-color: white;
+
+
+            min-width: 230px;
+            /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+        }
+
+        .shop-menu:hover .dropdown {
+            display: block;
+
+        }
+
+        .dropdown ul {
+            list-style: none;
+            padding: 0px;
+            margin: 0px;
+            display: block;
+        }
+
+
+        .dropdown ul li a {
+            color: rgb(7, 7, 7);
+        }
+
+        .dropdown ul li:hover {
+            background-color: rgb(243, 215, 215);
+
+        }
+
+
+        /* .dropdown 1 styling */
+
+
+        .shop-menu1 .dropdown1 {
+            display: none;
+            position: absolute;
+            top: 0px;
+            left: 230px;
+            color: black;
+            background-color: white;
+            /* padding: 3px 7px; */
+            z-index: 2;
+            min-width: 200px;
+            transition: opacity 0.2s ease;
+            /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+        }
+
+
+        .shop-menu1:hover .dropdown1 {
+            display: block;
+        }
+
+
+
+        /* fa-angle-right (>) rotation  */
+
+        .shop-menu1 i {
+            transition: transform 0.3s ease;
+            margin-left: 5px;
+            /* optional */
+        }
+
+        /* Rotate icon when the li is hovered */
+        .shop-menu1:hover>i {
+            transform: rotate(90deg);
+        }
+
+
+
+        .dropdown1 ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: block;
+        }
+
+        .dropdown1 li a {
+            color: rgb(219, 120, 120);
+
+            display: block;
+            margin-left: 12px;
+
+        }
+
+        .dropdown ul li {
+            padding: 12px 10px;
+        }
+
+
+        .shop-menu1 .dropdown2 {
+            margin-top: 42px;
+            left: 230px;
+        }
+
+        .shop-menu1 .dropdown3 {
+            margin-top: 85px;
+            left: 230px;
+        }
+
+        .shop-menu1 .dropdown4 {
+            margin-top: 125px;
+            left: 230px;
+        }
+
+        .shop-menu1 .dropdown5 {
+            margin-top: 169px;
+            left: 230px;
+        }
+
+        .shop-menu1 .dropdown6 {
+            margin-top: 210px;
+            left: 230px;
+        }
+
+
+
+
+
+        /* tagline animation */
+
+        .animation {
+            display: inline-block;
+            white-space: nowrap;
+            color: rgba(250, 102, 3, 0.899);
+            overflow: hidden;
+            border-right: 0.2em solid rgb(32, 29, 28);
+            /* Cursor */
+            animation:
+                typeAndDelete 6s steps(16) infinite,
+                blinkCursor 0.5s step-end infinite;
+
+        }
+
+        .main-heading h2, p {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .main-heading h2 {
+            text-align: center;
+        }
+
+        .main-heading h2, p {
+            text-align: center;
+        }
+
+        .main-heading h2::after {
+            content: "";
+            width: 200px;
+            height: 6px;
+            background-color: rgb(84, 162, 203);
+            margin: 15px auto;
+            display: block;
+            border-radius: 5px;
+        }
+
+      
+
+
+        @keyframes blinkCursor {
+            50% {
+                border-right-color: transparent;
+            }
+        }
+
+        @keyframes typeAndDelete {
+
+            0%,
+            10% {
+                width: 0;
+            }
+
+            45%,
+            55% {
+                width: 11em;
+            }
+
+            /* adjust width based on content */
+            90%,
+            100% {
+                width: 0;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+            .sidebar {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+
+            }
+
+            .fa-bars {
+                display: block;
+                padding-right: 6px;
+            }
+
+            .logo {
+                padding-left: 7px;
+            }
+
+
+        }

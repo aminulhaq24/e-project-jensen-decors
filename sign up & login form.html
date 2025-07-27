@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign up</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+
+            background-color: #1c1919;
+            z-index: 1;
+              position: fixed;
+        }
+
+       .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 9;
+            /* overflow: hidden; */
+        }
+
+
+
+
+        .nav-links ul {
+            list-style: none;
+            display: flex;
+            /* gap: 32px; */
+            margin: 0;
+            padding: 0;
+        }
+
+            .nav-links>ul>li>a {
+            text-decoration: none;
+            color: rgb(255, 251, 249);
+            font-weight: bold;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            padding: 23px 23px 21px 23px;
+        }
+
+        .nav-links>ul>li>a:hover {
+
+            color: rgb(243, 97, 83);
+            border-bottom: 4px solid green;
+            /* margin-bottom: 45px; */
+            background-color: #444;
+
+        }
+
+        .nav-links>ul>li:hover  {
+            border-bottom: 4px solid green;
+        }
+
+
+
+        .logo img {
+            width: 90px;
+            margin-left: 20px;
+            padding: 10px;
+        }
+
+        .icons {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            font-size: 18px;
+            color: rgb(253, 251, 249);
+            cursor: pointer;
+        }
+
+
+        /* Search box */
+        .search-box {
+            position: absolute;
+            top: 65px;
+            right: 50px;
+            border-radius: 9px;
+            box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.2);
+            display: none;
+            z-index: 4444;
+            background-color: white;
+            box-shadow: 0 0 15px #050505;
+
+        }
+
+        .search-box input {
+            padding: 13px 13px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 9px;
+        }
+
+        .search-close {
+            cursor: pointer;
+            font-size: 25px;
+            color: rgb(7, 7, 7);
+            font-weight: bold;
+            position: absolute;
+            right: 10px;
+            bottom: 8px;
+        }
+
+        /* Sidebar Nav */
+
+
+        .sidebar {
+            position: fixed;
+            top: 53px;
+            right: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: rgb(255, 255, 255);
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+            transition: right 0.3s ease;
+            padding: 20px;
+            z-index: 5;
+        }
+
+        .active {
+            right: 0;
+        }
+
+        .slidebar {
+            right: 0;
+        }
+
+        /* isko hm is tarah se bhi likh sakte hain */
+
+        /* .slidebar.active {
+      right: 0;
+        } */
+
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: rgb(216, 107, 35);
+            font-size: 18px;
+        }
+
+        /* this class appears on side bar as cross icon (multiplication sign) when clicks on menu icon */
+
+        .close-btn {
+            font-size: 20px;
+            text-align: right;
+            cursor: pointer;
+            color: rgb(4, 4, 4);
+            margin-bottom: 20px;
+        }
+
+        /* Hide nav links on desktop */
+        .nav-links {
+            display: block;
+
+        }
+
+        /* .nav-links li {
+       position: relative;
+      
+       } */
+
+        .fa-bars {
+            display: none;
+        }
+
+        .icons i:hover {
+            color: #d86b23;
+            transform: scale(1.3);
+
+        }
+
+        .fa-user,
+        .fa-cart-shopping {
+            margin-right: 7px;
+        }
+
+         a i.fa-user {
+            color: white;
+        }
+
+        /* a:visited i.fa-user {
+        color: white !important; } */
+
+        .fa-search {
+            margin-right: 7px;
+        }
+
+        .fa-angle-right:hover {
+            rotate: 90(deg);
+        }
+
+
+        /* dropdown style */
+
+        .shop-menu {
+            position: relative;
+            z-index: 6;
+
+        }
+
+
+
+        .shop-menu .dropdown {
+            display: none;
+            position: absolute;
+            top: 40px;
+            left: -6px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            background-color: #f9f9f9;
+            border-radius: 4px;
+
+            min-width: 270px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .shop-menu:hover .dropdown {
+            display: block;
+
+        }
+
+        .dropdown ul {
+            list-style: none;
+            padding: 0px;
+            margin: 0px;
+            display: block;
+        }
+
+
+        .dropdown ul li a {
+            color: rgb(7, 7, 7);
+            margin-left: 14px;
+            text-decoration: none;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .dropdown ul li:hover {
+            background-color: #ddd;
+
+        }
+
+
+        /* .dropdown 1 styling */
+
+
+        .shop-menu1 .dropdown1 {
+            display: none;
+            position: absolute;
+            top: 0px;
+            left: 230px;
+            color: black;
+            background-color: white;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            /* padding: 3px 7px; */
+            z-index: 2;
+            min-width: 200px;
+            border-radius: 4px;
+            transition: opacity 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+
+        .shop-menu1:hover .dropdown1 {
+            display: block;
+        }
+
+
+
+        /* fa-angle-right (>) rotation  */
+
+        .shop-menu1 i {
+            transition: transform 0.3s ease;
+            margin-left: 5px;
+            /* optional */
+        }
+
+        /* Rotate icon when the li is hovered */
+        .shop-menu1:hover>i {
+            transform: rotate(90deg);
+        }
+
+
+
+        .dropdown1 ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: block;
+        }
+
+        .dropdown1 li a {
+            color: rgb(219, 120, 120);
+
+            display: block;
+            margin-left: 12px;
+
+        }
+
+        .dropdown ul li {
+            padding: 12px 10px;
+        }
+
+
+        .shop-menu1 .dropdown2 {
+            margin-top: 42px;
+            left: 230px;
+        }
+
+        .shop-menu1 .dropdown3 {
+            margin-top: 85px;
+            left: 230px;
+        }
+
+        .shop-menu1 .dropdown4 {
+            margin-top: 125px;
+            left: 230px;
+        }
+
+        .shop-menu1 .dropdown5 {
+            margin-top: 169px;
+            left: 230px;
+        }
+
+        .shop-menu1 .dropdown6 {
+            margin-top: 210px;
+            left: 230px;
+        }
+
+        /* form styling */
+
+        .form-container {
+            margin: 230px auto 100px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            height: 100%;
+            
+        }
+
+        /* Toggle Switch Styling */
+        .toggle-wrapper {
+            display: flex;
+            /* justify-content: center; */
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            border: 2px solid rgb(35, 35, 35);
+            padding: 20px 16px;
+            border-radius: 34px;
+           background-color: #f7f4f4;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 28px;
+
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            background-color: #ccc;
+            border-radius: 34px;
+            top: -5px;
+            left: 0;
+            right: 0;
+            bottom: 5px;
+            transition: 0.2s;
+
+        }
+
+        .slider::before {
+            position: absolute;
+            content: "";
+            height: 22px;
+            width: 22px;
+            left: 4px;
+            bottom: 3px;
+            background-color: white;
+            border-radius: 50%;
+            transition: 0.2s;
+        }
+
+        input:checked+.slider {
+            background-color: #d86b23;
+        }
+
+        input:checked+.slider::before {
+            transform: translateX(32px);
+        }
+
+
+        #login-label {
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        #signup-label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* Form Box Styling */
+        .form-box {
+            background: white;
+            width: 90%;
+            max-width: 400px;
+            margin: 70px auto 90px auto;
+            padding: 30px 30px 1px 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            height: 500px;
+           background-color: #f7f4f4;
+
+            display: flex;
+            flex-direction: column;
+
+            align-items: center;
+            gap: 10px;
+
+        }
+
+        /* .form-box input {
+            width: 80%;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            
+            margin: 50px 40px -140px;
+        } */
+        .h3 {
+            margin-top: 25px;
+            font-size: 1.8rem;
+
+        }
+
+        .form-box input {
+            width: 80%;
+            padding: 10px;
+        }
+
+        .form-box .input1 {
+            margin: 50px 0 56px;
+        }
+
+        .form-box .input2 {
+            margin: -80px 0 0;
+        }
+
+        .form-box .input3 {
+            margin: -23px;
+
+        }
+
+
+        #login-form {
+            height: 400px;
+        }
+
+        #login-form .input1 {
+            margin: 45px;
+        }
+
+        #login-form .input2 {
+            margin: -72px;
+        }
+
+        #login-form a {
+            margin: 70px;
+        }
+
+        /* .form-box a {
+            padding: 10px 20px;
+            background-color: #d86b23;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            margin: 80px 140px;
+            display: inline-block;
+        } */
+
+        .form-box a {
+            padding: 10px 40px;
+            background-color: #d86b23;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+
+
+        /* footer */
+
+
+        .footer {
+            background-color: #201e1e;
+            color: #fff8f0;
+            padding: 30px 0px 20px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            background-color: #201e1e;
+            /* padding: 0 9vw; */
+            /* align-items: center; */
+        }
+
+
+        .footer-about h3 {
+            color: #d86b23;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .footer-links h4,
+        .footer-social h4 {
+
+            color: #d86b23;
+            margin-top: 30px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 10px;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-links ul li a {
+            color: #fff8f0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links ul li a:hover {
+            color: #d86b23;
+        }
+
+        .footer-social .social-icons a {
+            color: #fff8f0;
+            font-size: 18px;
+            margin-right: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-social .social-icons a:hover {
+            color: #d86b23;
+        }
+
+
+        .app-download>div>img {
+            display: flex;
+            margin-top: -20px;
+            margin-bottom: -35px;
+
+        }
+
+        .app-download h4 {
+            margin-bottom: 0px;
+            margin-top: 20px;
+        }
+
+
+        .footer-logo img {
+            margin: 6px;
+            margin-bottom: 30px;
+            margin-top: 40px;
+
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            color: #aaa;
+            padding: 20px;
+            background-color: white;
+            margin: 30px 0;
+
+
+        }
+
+        /* footer end */
+
+
+
+
+        @media (max-width: 600px) {
+            .sidebar {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+
+            }
+
+            .fa-bars {
+                display: block;
+                padding-right: 6px;
+            }
+
+            .logo {
+                padding-left: 7px;
+            }
+
+            .logo img {
+                margin-left: 2px;
+            }
+
+
+            .footer-container {
+                margin-left: 8px;
+            }
+
+
+            .footer-links {
+                width: 48%;
+                display: inline-block;
+                vertical-align: top;
+            }
+
+            .footer-social {
+                margin-top: 0;
+                order: 4;
+            }
+
+            .footer-logo {
+                margin-left: -20px;
+                margin-bottom: 60px;
+            }
+
+            .app-download {
+                margin-top: -1px;
+            }
+
+            .about-section {
+                margin: 2vw;
+            }
+
+            .about-section h1 {
+                margin: 1vw;
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+
+            <div class="navbar">
+                <!-- Logo -->
+                <div class="logo">
+                    <img src="jensen-decors-high-resolution-logo-transparent.png" alt="jensen decors">
+                </div>
+
+
+
+                <!-- Desktop Nav links -->
+                <div class="nav-links">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+
+                        <li class="shop-menu">
+                            <a href="#">Shop</a>
+                            <div class="dropdown">
+
+                                <ul>
+                                    <li class="shop-menu1">
+
+                                        <a href="metal wall art.html">Metal wall art</a>
+                                        <i class="fa fa-angle-right" style="margin-left: 73px;"></i>
+                                        <ul class="dropdown1">
+
+                                            <li><a href="#">Abstract Designs</a></li>
+                                            <li><a href="#">Nature Inspired</a></li>
+                                            <li><a href="#">Geometric Patterns</a></li>
+                                            <li><a href="#">Religious & Spiritual</a></li>
+                                            <li><a href="#">Animal Figures</a></li>
+                                        </ul>
+
+
+                                    </li>
+
+                                    <li class="shop-menu1">
+
+                                        <a href="wall papers.html">Wall papers</a>
+                                        <i class="fa fa-angle-right" style="margin-left: 88px;"></i>
+                                        <ul class="dropdown1 dropdown2">
+
+                                            <li><a href="#">Textured</a></li>
+                                            <li><a href="#">Floral Patterns</a></li>
+                                            <li><a href="#">3D Designs</a></li>
+                                            <li><a href="#">Kids Room</a></li>
+                                            <li><a href="#">Minimalist</a></li>
+
+
+
+                                        </ul>
+
+                                    </li>
+
+                                    <li class="shop-menu1">
+
+                                        <a href="photo frame art.html">Photo frame art</a>
+                                        <i class="fa fa-angle-right" style="margin-left: 58px;"></i>
+                                        <ul class="dropdown1 dropdown3">
+
+                                            <li><a href="#">Collage Frames</a></li>
+                                            <li><a href="#">Black & White Art</a></li>
+                                            <li><a href="#">Family Quotes</a></li>
+                                            <li><a href="#">Modern Art</a></li>
+                                            <li><a href="#">Canvas Prints</a></li>
+                                        </ul>
+
+                                    </li>
+
+
+                                    <li class="shop-menu1">
+
+                                        <a href="mirror art.html">Mirror art</a>
+                                        <i class="fa fa-angle-right" style="margin-left: 102px;"></i>
+                                        <ul class="dropdown1 dropdown4">
+
+                                            <li><a href="#">Round Mirrors</a></li>
+                                            <li><a href="#">Geometric Mirrors</a></li>
+                                            <li><a href="#">Sunburst Designs</a></li>
+                                            <li><a href="#">LED Mirrors</a></li>
+                                            <li><a href="#">Vintage Style</a></li>
+
+                                        </ul>
+
+                                    </li>
+
+
+                                    <li class="shop-menu1">
+
+                                        <a href="wall shelves.html">Wall shelves</a>
+                                        <i class="fa fa-angle-right" style="margin-left: 86px;"></i>
+                                        <ul class="dropdown1 dropdown5">
+
+                                            <li><a href="#">Floating Shelves</a></li>
+                                            <li><a href="#">Hexagon Shelves</a></li>
+                                            <li><a href="#">Corner Shelves</a></li>
+                                            <li><a href="#">Modern Metal</a></li>
+                                            <li><a href="#">Rustic Wood</a></li>
+
+                                        </ul>
+
+                                    </li>
+
+
+                                    <li class="shop-menu1">
+
+                                        <a href="wall mounted animals.html">Wall mounted animals</a>
+                                        <i class="fa fa-angle-right" style="margin-left: 10px;"></i>
+                                        <ul class="dropdown1 dropdown6">
+
+                                            <li><a href="#">Wooden Deer Heads</a></li>
+                                            <li><a href="#">Resin Animal Heads</a></li>
+                                            <li><a href="#">Metal Animal Silhouettes</a></li>
+                                            <li><a href="#">Kids Room Animals</a></li>
+                                            <li><a href="#">Abstract Animal Designs</a></li>
+
+                                        </ul>
+
+                                    </li>
+
+                                </ul>
+                            </div>
+
+                        </li>
+
+                        <li><a href="about us.html">About us</a></li>
+                        <li><a href="contact us.html">Contact us</a></li>
+
+                    </ul>
+                </div>
+
+                <!-- Icons -->
+                <div class="icons">
+                    <i class="fa fa-search" id="search-icon"></i>
+                    <i class="fa fa-user"></i>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <i class="fa fa-bars" id="menu-toggle"></i>
+                </div>
+
+                <!-- Search input -->
+                <div class="search-box" id="search-box">
+                    <span class="search-close" id="close-search">&times;</span>
+                    <input type="text" placeholder="Search..." size="30">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sidebar (for small screens) -->
+    <div class="sidebar" id="sidebar">
+        <div class="close-btn" id="close-sidebar"><i class="fa fa-times"></i></div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Contact us</a></li>
+            <li><a href="#">Categories</a></li>
+        </ul>
+    </div>
+
+
+    <!-- signup login form -->
+
+    <div class="form-container">
+        <div class="toggle-wrapper">
+            <span id="signup-label">Sign Up</span>
+            <label class="switch">
+                <input type="checkbox" id="form-toggle">
+                <span class="slider"></span>
+            </label>
+            <span id="login-label">Login</span>
+        </div>
+
+        <div id="signup-form" class="form-box">
+            <h3 class="h3">Create Your Account</h3>
+
+            <input type="text" class="input1" placeholder="Name" required><br><br>
+            <input type="email" class="input2" placeholder="Email" required><br><br>
+            <input type="password" class="input3" placeholder="Password" required><br><br>
+            <a href="">Sign Up</a>
+        </div>
+
+        <div id="login-form" class="form-box" style="display: none;">
+            <h3 class="h3">Login Your Account</h3>
+            <input type="email" class="input1" placeholder="Email" required><br><br>
+            <input type="password" class="input2" placeholder="Password" required><br><br>
+            <a href="">Login</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+
+    <footer class="footer">
+        <div class="footer-container">
+
+
+            <div class="footer-logo">
+                <img src="jensen-decors-high-resolution-logo-transparent.png" alt="" width="130px" height="90px">
+
+                <div class="app-download">
+                    <h4>Download our app</h4>
+                    <div>
+                        <img src="google play png.png" alt="" width="120px" height="130px">
+                        <img src="app store png.png" alt="" width="120px" height="45px">
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Links</h4><br>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Contact us</a></li>
+                    <li><a href="#">All Products</a></li>
+                    <li><a href="#">Featured products</a></li>
+                    <li><a href="#">Track Your Order</a></li>
+                    <li><a href="#">Jobs</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Policies</h4><br>
+                <ul>
+                    <li><a href="#">Return & Refund Policy</a></li>
+                    <li><a href="#">Shipping Policiy</a></li>
+                    <li><a href="#">Terms & Condition</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+
+                <br><br><br><br>
+
+                <div class="footer-social">
+                    <h4>Follow Us</h4><br>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-x"></i></a>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="footer-links">
+                <h4>Contact</h4><br>
+                <ul>
+                    <li><a href="#">WhatsApp: +923152893207</a></li><br>
+
+                    <li><a href="#">Outlet #1: Metro Cash n Carry Parking, Thokar Niaz Baig, Lahore</a></li><br>
+                    <li><a href="#">Outlet #2 : 1st floor, kiddyLand, Besides Al-Nassar-PIA Main Boulevard, Lahore</a>
+                    </li><br>
+                    <li><a href="#">Outlet #3: Tanki wali gali, Ichra Bazar, Lahore</a></li><br>
+                    <li><a href="#">Outlet # 4: Our Okara branch is located in HOME MART M A jinnah Road</a></li><br>
+                    <li><a href="#">Office Address: 782-G4-JOHAR TOWN, LHR</a></li><br>
+
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            &copy; 2025 Jensen Decors. All Rights Reserved.
+        </div>
+    </footer>
+
+
+
+    <!-- jQuery -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+
+        // sign login form toggle button
+
+        $(document).ready(function () {
+            $('#form-toggle').change(function () {
+                if ($(this).is(':checked')) {
+                    $('#signup-form').slideUp();
+                    $('#login-form').slideDown();
+                } else {
+                    $('#login-form').slideUp();
+                    $('#signup-form').slideDown();
+                }
+            });
+        });
+
+
+        // Toggle search input:
+
+        const searchIcon = document.getElementById("search-icon");
+        const searchBox = document.getElementById("search-box");
+        const closeSearch = document.getElementById("close-search");
+
+        searchIcon.addEventListener("click", () => {
+            searchBox.style.display = searchBox.style.display === "block" ? "none" : "block";
+
+        });
+
+        // searchIcon.addEventListener("click", () => {
+        //   searchBox.style.display = "block";
+        // });
+
+        closeSearch.addEventListener("click", () => {
+            searchBox.style.display = "none";
+        });
+
+        // Sidebar toggle:
+
+        const menuToggle = document.getElementById("menu-toggle");
+        const sidebar = document.getElementById("sidebar");
+        const closeSidebar = document.getElementById("close-sidebar");
+
+        menuToggle.addEventListener("click", () => {
+            sidebar.classList.add("active");
+        });
+
+        closeSidebar.addEventListener("click", () => {
+            sidebar.classList.remove("active");
+        });
+    </script>
+</body>
+
+</html>
+</body>
+
+</html>

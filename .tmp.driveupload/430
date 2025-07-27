@@ -1,0 +1,2149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jensen duplicate 2</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- jQuery -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+
+    <!-- <link rel="stylesheet" href="jensen decors e-project.css"> -->
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+
+            font-family: Arial, sans-serif;
+        }
+
+
+
+        .container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #1c1919;
+            /* overflow: hidden; */
+            z-index: 5;
+            position: sticky;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 9;
+
+
+        }
+
+
+
+
+        .nav-links ul {
+            list-style: none;
+            display: flex;
+            /* gap: 32px; */
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links>ul>li>a {
+            text-decoration: none;
+            color: rgb(255, 251, 249);
+            font-weight: bold;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            padding: 23px 23px 19px 23px;
+        }
+
+        .nav-links>ul>li>a:hover {
+
+            color: rgb(243, 97, 83);
+            border-bottom: 4px solid green;
+            /* margin-bottom: 45px; */
+            background-color: #444;
+
+        }
+
+
+
+        .logo img {
+            width: 90px;
+            margin-left: 20px;
+            padding: 10px;
+        }
+
+
+        /* Search box */
+        .search-box {
+            position: absolute;
+            top: 65px;
+            right: 50px;
+            border-radius: 9px;
+            box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.2);
+            display: none;
+            z-index: 4444;
+            width: 650px;
+            background-color: white;
+            box-shadow: 0 0 15px #050505;
+
+        }
+
+        .search-box input {
+            padding: 13px 13px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 9px;
+            width: 650px;
+        }
+
+        .search-close {
+            cursor: pointer;
+            font-size: 25px;
+            color: rgb(7, 7, 7);
+            font-weight: bold;
+            position: absolute;
+            right: 10px;
+            bottom: 8px;
+        }
+
+
+        /* Sidebar Nav */
+
+
+        .sidebar {
+            position: fixed;
+            top: 53px;
+            right: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: rgb(255, 255, 255);
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+            transition: right 0.3s ease;
+            padding: 20px;
+            z-index: 5;
+        }
+
+        .active {
+            right: 0;
+        }
+
+        .slidebar {
+            right: 0;
+        }
+
+        /* isko hm is tarah se bhi likh sakte hain */
+
+        /* .slidebar.active {
+            right: 0;
+        } */
+
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: rgb(216, 107, 35);
+            font-size: 18px;
+        }
+
+        /* this class appears on side bar as cross icon (multiplication sign) when clicks on menu icon */
+
+        .close-btn {
+            font-size: 30px;
+            text-align: right;
+            cursor: pointer;
+            color: rgb(9, 9, 8);
+            margin-bottom: 20px;
+        }
+
+        .close-btn:hover {
+            rotate: 360(deg);
+        }
+
+        /* Hide nav links on desktop */
+        .nav-links {
+            display: block;
+
+        }
+
+        /* .nav-links li {
+       position: relative;
+      
+       } */
+
+        .icons {
+            display: flex;
+            gap: 9px;
+            align-items: center;
+            font-size: 18px;
+            color: rgb(253, 251, 249);
+            cursor: pointer;
+        }
+
+        .icons i:hover {
+            color: #d86b23;
+            transform: scale(1.3);
+
+        }
+
+        .fa-bars {
+            display: none;
+        }
+
+        .fa-user,
+        .fa-cart-shopping {
+            margin-right: 7px;
+        }
+
+        a i.fa-user {
+            color: white;
+        }
+
+        /* a:visited i.fa-user {
+        color: white !important; } */
+
+        .fa-search {
+            margin-right: 7px;
+        }
+
+        .fa-angle-right:hover {
+            rotate: 90(deg);
+        }
+
+
+        /* dropdown style */
+
+        .shop-menu {
+            position: relative;
+            z-index: 6;
+
+        }
+
+
+
+        .shop-menu .dropdown {
+            display: none;
+            position: absolute;
+            top: 40px;
+            left: -6px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            background-color: #f9f9f9;
+            border-radius: 4px;
+
+            min-width: 270px;
+            /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+        }
+
+        .shop-menu:hover .dropdown {
+            display: block;
+
+        }
+
+        .dropdown ul {
+            list-style: none;
+            padding: 0px;
+            margin: 0px;
+            display: block;
+        }
+
+
+        .dropdown ul li a {
+            color: rgb(7, 7, 7);
+            margin-left: 14px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-decoration: none;
+        }
+
+        .dropdown ul li:hover {
+            background-color: #ddd;
+
+        }
+
+
+        /* .dropdown 1 styling */
+
+
+        .shop-menu1 .dropdown1 {
+            display: none;
+            position: absolute;
+            top: 0px;
+            left: 230px;
+            color: black;
+            background-color: white;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            /* padding: 3px 7px; */
+            z-index: 2;
+            min-width: 200px;
+            border-radius: 4px;
+            transition: opacity 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+
+        .shop-menu1:hover .dropdown1 {
+            display: block;
+        }
+
+
+
+        /* fa-angle-right (>) rotation  */
+
+        .shop-menu1 i {
+            transition: transform 0.3s ease;
+            margin-left: 5px;
+            /* optional */
+        }
+
+        /* Rotate icon when the li is hovered */
+        .shop-menu1:hover>i {
+            transform: rotate(90deg);
+        }
+
+
+
+        .dropdown1 ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: block;
+        }
+
+        .dropdown1 li a {
+            color: rgb(219, 120, 120);
+
+            display: block;
+            margin-left: 15px;
+
+        }
+
+        .dropdown ul li {
+            padding: 12px 10px;
+
+        }
+
+
+        .shop-menu1 .dropdown2 {
+            margin-top: 42px;
+            left: 230px;
+
+        }
+
+        .shop-menu1 .dropdown3 {
+            margin-top: 85px;
+            left: 230px;
+        }
+
+        .shop-menu1 .dropdown4 {
+            margin-top: 125px;
+            left: 230px;
+        }
+
+        .shop-menu1 .dropdown5 {
+            margin-top: 169px;
+            left: 230px;
+        }
+
+        .shop-menu1 .dropdown6 {
+            margin-top: 210px;
+            left: 230px;
+        }
+
+
+
+
+        /* for banner image */
+
+
+        .hero-image {
+            position: relative;
+            height: 100vh;
+
+            background-color: #7add0814;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-position: center;
+            background-size: cover;
+            ;
+            z-index: 0;
+            opacity: 9;
+        }
+
+
+        /* tagline on picture */
+
+
+        .tagline {
+            position: relative;
+            z-index: 0;
+            text-align: center;
+            margin-right: 60vw;
+            line-height: -5px;
+            top: 40%;
+            transform: translateY(-50%);
+            color: rgb(244, 110, 8);
+            font-size: 3.7rem;
+            word-spacing: 4px;
+            /* -webkit-text-stroke: #f45404;
+            -webkit-text-stroke-width: 1px; */
+            font-weight: bold;
+            text-shadow: 4px 4px 0px rgba(17, 14, 24, 0.93);
+        }
+
+
+
+        .typewriter {
+            font-size: 2.3rem;
+            color: #f1bb0a;
+            font-family: cursive;
+            white-space: normal;
+            margin-right: -2vw;
+            word-spacing: 3px;
+            margin-top: 20px;
+            -webkit-text-stroke: #0d0c0c;
+            -webkit-text-stroke-width: 1px;
+            text-shadow: 2px 3px 5px rgba(185, 213, 28, 0.737);
+        }
+
+        .cursor {
+            display: inline-block;
+            font-weight: bold;
+            color: #f34e07;
+            animation: blink 0.5s infinite;
+            /* box-shadow: 1px 1px 5px red; */
+            margin-left: 6px;
+            padding: -4px;
+            backdrop-filter: blur(300px);
+            background-color: #141414;
+            border-radius: 34px;
+
+        }
+
+        .explore-now {
+            color: #fafaf2;
+            text-decoration: none;
+            font-size: 1.2rem;
+            text-shadow: none;
+            /* border: 2px solid black; */
+            padding: 7px 25px;
+            border-radius: 34px;
+            margin-top: 80px;
+            display: inline-block;
+            background: #FD1D1D;
+            background: linear-gradient(268deg, rgba(253, 29, 29, 1) 17%, rgba(252, 176, 69, 1) 88%);
+            font-weight: 10;
+        }
+
+        .explore-now:hover {
+            background-color: rgba(97, 238, 41, 0.937);
+            transform: scale(1.2);
+            transition: all 0.4s ease-in-out;
+            border: 1px solid orangered;
+            color: #050505;
+        }
+
+        @keyframes blink {
+
+
+            100% {
+                opacity: 0.5;
+            }
+
+            20% {
+                opacity: 0;
+            }
+        }
+
+
+
+
+        /* owl carousel styling */
+
+        .owl-dots {
+            font-size: 30px;
+            padding: 22px;
+            margin-top: 22px;
+        }
+
+        .owl-carousel {
+            margin-top: 60px;
+        }
+
+        .owl-carousel .item {
+            background: #fff;
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 20, 0, 0.1);
+        }
+
+        .owl-carousel .item img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .owl-carousel .item h4 {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .owl-nav {
+            position: absolute;
+            top: 35%;
+            width: 100%;
+        }
+
+        .owl-prev,
+        .owl-next {
+            position: absolute;
+            transform: translateY(-50%);
+            font-size: 30px !important;
+            background: rgba(45, 22, 22, 0.5) !important;
+            width: 50px;
+            height: 50px;
+            border-radius: 50% !important;
+            color: white !important;
+        }
+
+        .owl-prev {
+            left: -5px;
+        }
+
+        .owl-next {
+            right: -5px;
+        }
+
+
+        /* decorate your room... */
+
+        .main-heading h2,
+        p {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .main-heading h2 {
+            text-align: center;
+            font-size: 3.2rem;
+            color: #d86b23;
+        }
+
+        .main-heading p {
+            margin: 70px 200px;
+            font-size: 1.3rem;
+        }
+
+        .main-heading h2::after {
+            content: "";
+            width: 30vw;
+            height: 6px;
+            background-color: rgb(15, 15, 16);
+            margin: 20px auto;
+            display: block;
+            border-radius: 5px;
+        }
+
+        .product-heading {
+            text-align: center;
+            margin: 120px auto 50px auto;
+            font-size: 2.7rem;
+            position: relative;
+        }
+
+        .product-heading::after {
+            content: "";
+            display: block;
+            height: 6px;
+            width: 115px;
+            background-color: #d86b23;
+            margin: 14px auto 60px auto;
+            /* auto center */
+            border-radius: 8px;
+        }
+
+
+        /* .product-heading {
+            font-size: 35px;
+            margin: 70px 190px;
+        } */
+
+        /* .product-heading::after {
+            content: "";
+            width: 150px;
+            height: 6px;
+            background-color: rgb(84, 162, 203);
+            margin: 20px 42px;
+            display: block;
+            border-radius: 5px;
+        } */
+
+        .product-heading2::after {
+            margin: 14px auto 60px auto;
+            width: 100px;
+        }
+
+
+
+        .product-heading3::after {
+            margin: 16px auto 60px auto;
+            width: 140px;
+        }
+
+
+        .product-heading4::after {
+            margin: 16px auto 60px auto;
+            width: 70px;
+        }
+
+        .product-heading5::after {
+            margin: 16px auto 60px auto;
+            width: 100px;
+        }
+
+        .product-heading6::after {
+            margin: 16px auto 60px auto;
+            width: 190px;
+        }
+
+
+        /* product item styling */
+
+
+        .product-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 50px;
+            margin: 80px;
+
+        }
+
+        /* .product-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+} */
+
+
+        .product:hover {
+            box-shadow: 1px 6px 10px rgb(147, 143, 143);
+            transform: scale(1.05);
+            transition: all 0.3s ease-in-out;
+            border-radius: 7px;
+            border: 1px solid green;
+            cursor: pointer;
+        }
+
+        .product {
+            padding: 8px;
+            cursor: pointer;
+            /* animation: items-animation 1s ease-in-out 0.2s 1; */
+        }
+
+        /* 
+       @keyframes items-animation {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    } */
+
+
+
+        .product img {
+            border-top-left-radius: 7px;
+            border-top-right-radius: 7px;
+        }
+
+        .product h4 {
+            font-size: 12px;
+            font-weight: 400;
+            color: #8f8282;
+            padding: 4px 0;
+        }
+
+
+        .product-cart {
+            display: inline-block;
+            margin-top: 14px;
+            margin-left: 33px;
+            border: 1px solid rgba(235, 9, 9, 0.227);
+            background-color: #fb55083b;
+            padding: 2px 0px 0px 12px;
+            border-radius: 34px;
+            margin-top: 11px;
+            width: 40px;
+            margin-bottom: 10px;
+
+
+        }
+
+        .product-cart:hover {
+            background-color: #082cfb1a;
+            transform: scale(1.2);
+        }
+
+        .product-cart img {
+            width: 16px;
+        }
+
+
+        /* view more button styling */
+
+
+        .view-more-btn {
+            display: flex;
+            margin: 50px auto;
+            justify-content: center;
+        }
+
+        .button {
+            display: inline-block;
+            text-decoration: none;
+            cursor: pointer;
+            position: relative;
+            padding: 7px 24px;
+            font-size: 18px;
+            color: rgba(238, 76, 6, 0.986);
+            border: 2px solid rgb(29, 28, 27);
+            border-radius: 34px;
+            background-color: transparent;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+            overflow: hidden;
+
+        }
+
+        .button::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            margin: auto;
+            width: 60px;
+            height: 60px;
+            border-radius: inherit;
+            scale: 0;
+            z-index: -1;
+            background-color: rgb(241, 104, 13);
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+
+        }
+
+        .button:hover::before {
+            scale: 3;
+
+        }
+
+        .button:hover {
+            color: #201e1e;
+            scale: 1.1;
+            box-shadow: 1px 1px 15px rgba(85, 69, 33, 0.4);
+            overflow: hidden;
+            transform: scale(1.1);
+
+        }
+
+        /* customer reviews heading */
+
+        .customer-review-heading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 0px auto;
+        }
+
+        .customer-review-heading p::after {
+            content: "";
+            width: 18vw;
+            height: 6px;
+            background-color: rgb(239, 67, 20);
+            margin: 20px auto;
+            display: block;
+            border-radius: 5px;
+        }
+
+
+
+        .customer-review-heading p {
+            font-size: 2.7rem;
+            padding: 16px;
+            margin: 15px;
+        }
+
+
+        /* customer-reviews owl carousel */
+
+        .customer-reviews .item {
+            background: #fff8f0;
+            border: 1px solid #d86b23;
+            padding: 10px 10px;
+            padding-top: 0px;
+            border-radius: 10px;
+            text-align: center;
+            color: #444;
+            margin: 30px;
+            /* width: 200px; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .customer-reviews .item:hover {
+            box-shadow: 2px 2px 10px orangered;
+        }
+
+        .customer-reviews {
+            /* margin-left: 10vw;
+             margin-right: 10vw; */
+            padding: 0 13vw;
+            /* adjust margin from both side of container */
+            box-sizing: border-box;
+            margin-top: 30px;
+
+        }
+
+
+
+        .customer-reviews .item .review-body {
+            /* white-space: normal; */
+            max-width: 230px;
+            word-wrap: break-word;
+            margin-top: 30px;
+            margin-bottom: -25px;
+
+        }
+
+        .customer-reviews .item .customer-name {
+            padding-bottom: 20px;
+            color: #d86b23;
+        }
+
+
+        /* footer */
+
+
+        .footer {
+            background-color: #201e1e;
+            color: #fff8f0;
+            padding: 30px 0px 20px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            background-color: #201e1e;
+            /* padding: 0 9vw; */
+            /* align-items: center; */
+        }
+
+
+        .footer-about h3 {
+            color: #d86b23;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .footer-links h4,
+        .footer-social h4 {
+            margin-bottom: 11px;
+            color: #d86b23;
+            margin-top: 30px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 10px;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-links ul li a {
+            color: #fff8f0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links ul li a:hover {
+            color: #d86b23;
+        }
+
+        .footer-social .social-icons a {
+            color: #fff8f0;
+            font-size: 18px;
+            margin-right: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-social .social-icons a:hover {
+            color: #d86b23;
+        }
+
+
+        .app-download>div>img {
+            display: flex;
+            margin-top: -20px;
+            margin-bottom: -35px;
+
+        }
+
+        .app-download h4 {
+            margin-bottom: 0px;
+            margin-top: 20px;
+        }
+
+
+        .footer-logo img {
+            margin: -3px;
+            margin-bottom: 30px;
+            margin-top: 37px;
+
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            color: #aaa;
+            padding: 20px;
+            background-color: white;
+            margin: 30px 0;
+
+
+        }
+
+        /* footer end */
+
+
+
+
+        @media (max-width: 600px) {
+            .sidebar {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+
+            }
+
+            .fa-bars {
+                display: block;
+                padding-right: 6px;
+            }
+
+            .logo {
+                padding-left: 4px;
+            }
+
+            .logo img {
+                margin-left: 2px;
+            }
+
+            .search-box {
+                width: 330px;
+            }
+
+            .search-box input {
+                width: 330px;
+            }
+
+            .tagline {
+                font-size: 2.6rem;
+                margin: 40px;
+                margin-top: 40px;
+            }
+
+
+            .main-heading h2 {
+                font-size: 2.1rem;
+            }
+
+
+            .main-heading p {
+                margin: 40px 50px;
+            }
+
+            .product-heading {
+                font-size: 2.1rem;
+            }
+
+            .product-heading6::after {
+
+                width: 100px;
+            }
+
+
+
+            .customer-review-heading p {
+                font-size: 1.9rem;
+            }
+
+
+            /* .product-heading::after {
+                margin: 18px auto;
+                text-align: center;
+
+            } */
+
+            .footer-container {
+                margin-left: 8px;
+            }
+
+
+            .footer-links {
+                width: 48%;
+                display: inline-block;
+                vertical-align: top;
+            }
+
+            .footer-social {
+                margin-top: 10px;
+
+            }
+
+            .footer-logo {
+                margin-left: -20px;
+                margin-bottom: 60px;
+            }
+
+            .app-download {
+                margin-top: -1px;
+            }
+
+            .typewriter {
+                font-size: 1.6rem;
+            }
+
+  
+}
+
+
+        
+
+        /* @media (max-width: 740px) and (min-width: 500px) {
+            .product-container {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+        } */
+
+
+
+        /* Mobile view: 1 column up to 400px */
+        /* @media (max-width: 400px) {
+            .product-container {
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+            } */
+
+            @media (max-width: 740px) and (min-width: 400px){
+                .product{
+                    gap: 8px;
+                
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+                }
+            
+  
+            
+
+        
+  
+
+/* Mobile screen - 400px tak 1 item */
+/* @media (max-width: 400px) {
+  .product {
+    flex:1 1 100%;
+    max-width: 100%;
+  }
+} */
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+
+        <!-- <div class="tagline">
+                <span>Furnish Your Home</span><br />
+                <span class="animation">With Style & Comfort...</span>
+            </div> -->
+
+        <!-- <div class="tagline">
+                <span>Furnish Your Home</span><br />
+                <span class="typewriter"><span id="typing-text"></span><span class="cursor">|</span></span>
+            </div> -->
+
+
+        <div class="navbar">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="index.html"><img src="jensen-decors-high-resolution-logo-transparent.png"
+                        alt="jensen decors"></a>
+            </div>
+
+
+
+            <!-- Desktop Nav links -->
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+
+                    <li class="shop-menu">
+                        <a href="all products.html">Shop</a>
+                        <div class="dropdown">
+
+                            <ul>
+                                <li class="shop-menu1">
+
+                                    <a href="metal wall art.html">Metal wall art</a>
+                                    <i class="fa fa-angle-right" style="margin-left: 73px;"></i>
+                                    <ul class="dropdown1">
+
+                                        <li><a href="#">Abstract Designs</a></li>
+                                        <li><a href="#">Nature Inspired</a></li>
+                                        <li><a href="#">Geometric Patterns</a></li>
+                                        <li><a href="#">Religious & Spiritual</a></li>
+                                        <li><a href="#">Animal Figures</a></li>
+                                    </ul>
+
+
+                                </li>
+
+                                <li class="shop-menu1">
+
+                                    <a href="wall papers.html">Wall papers</a>
+                                    <i class="fa fa-angle-right" style="margin-left: 88px;"></i>
+                                    <ul class="dropdown1 dropdown2">
+
+                                        <li><a href="#">Textured</a></li>
+                                        <li><a href="#">Floral Patterns</a></li>
+                                        <li><a href="#">3D Designs</a></li>
+                                        <li><a href="#">Kids Room</a></li>
+                                        <li><a href="#">Minimalist</a></li>
+
+
+
+                                    </ul>
+
+                                </li>
+
+                                <li class="shop-menu1">
+
+                                    <a href="photo frame art.html">Photo frame art</a>
+                                    <i class="fa fa-angle-right" style="margin-left: 58px;"></i>
+                                    <ul class="dropdown1 dropdown3">
+
+                                        <li><a href="#">Collage Frames</a></li>
+                                        <li><a href="#">Black & White Art</a></li>
+                                        <li><a href="#">Family Quotes</a></li>
+                                        <li><a href="#">Modern Art</a></li>
+                                        <li><a href="#">Canvas Prints</a></li>
+                                    </ul>
+
+                                </li>
+
+
+                                <li class="shop-menu1">
+
+                                    <a href="mirror art.html">Mirror art</a>
+                                    <i class="fa fa-angle-right" style="margin-left: 102px;"></i>
+                                    <ul class="dropdown1 dropdown4">
+
+                                        <li><a href="#">Round Mirrors</a></li>
+                                        <li><a href="#">Geometric Mirrors</a></li>
+                                        <li><a href="#">Sunburst Designs</a></li>
+                                        <li><a href="#">LED Mirrors</a></li>
+                                        <li><a href="#">Vintage Style</a></li>
+
+                                    </ul>
+
+                                </li>
+
+
+                                <li class="shop-menu1">
+
+                                    <a href="wall shelves.html">Wall shelves</a>
+                                    <i class="fa fa-angle-right" style="margin-left: 86px;"></i>
+                                    <ul class="dropdown1 dropdown5">
+
+                                        <li><a href="#">Floating Shelves</a></li>
+                                        <li><a href="#">Hexagon Shelves</a></li>
+                                        <li><a href="#">Corner Shelves</a></li>
+                                        <li><a href="#">Modern Metal</a></li>
+                                        <li><a href="#">Rustic Wood</a></li>
+
+                                    </ul>
+
+                                </li>
+
+
+                                <li class="shop-menu1">
+
+                                    <a href="wall mounted animals.html">Wall mounted animals</a>
+                                    <i class="fa fa-angle-right" style="margin-left: 10px;"></i>
+                                    <ul class="dropdown1 dropdown6">
+
+                                        <li><a href="#">Wooden Deer Heads</a></li>
+                                        <li><a href="#">Resin Animal Heads</a></li>
+                                        <li><a href="#">Metal Animal Silhouettes</a></li>
+                                        <li><a href="#">Kids Room Animals</a></li>
+                                        <li><a href="#">Abstract Animal Designs</a></li>
+
+                                    </ul>
+
+                                </li>
+
+                            </ul>
+                        </div>
+
+                    </li>
+
+                    <li><a href="about us.html">About us</a></li>
+                    <li><a href="contact us.html">Contact us</a></li>
+
+                </ul>
+            </div>
+
+            <!-- Icons -->
+            <div class="icons">
+                <i class="fa fa-search" id="search-icon"></i>
+                <a href="sign up & login form.html"><i class="fa fa-user"></i></a>
+                <i class="fa-solid fa-cart-shopping"></i>
+                <i class="fa fa-bars" id="menu-toggle"></i>
+            </div>
+
+            <!-- Search input -->
+            <div class="search-box" id="search-box">
+                <span class="search-close" id="close-search">&times;</span>
+                <input type="text" placeholder="Search..." size="30">
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Sidebar (for small screens) -->
+    <div class="sidebar" id="sidebar">
+        <div class="close-btn" id="close-sidebar"><i class="fa fa-times"></i></div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="all products.html">Shop</a></li>
+            <li><a href="about us.html">About us</a></li>
+            <li><a href="contact us.html">Contact us</a></li>
+        </ul>
+    </div>
+
+    <!-- for banner img -->
+
+    <div class="hero-image">
+        <img src="living room.jpg" alt="Decor background" class="hero-bg" />
+
+        <div class="tagline">
+            <span class="furnish">Furnish <br>your home</span><br>
+            <div class="typewriter">
+                <span id="typing-text"></span><span class="cursor">|</span>
+            </div>
+            <a href="#products" class="explore-now">explore now &#8594;</a>
+        </div>
+
+
+    </div>
+
+    <!--add owl carousel-->
+
+
+    <div class="owl-carousel owl-theme">
+        <div class="item"><img src="images/metal wall art/metal wall3.webp" alt="Product 1">
+
+        </div>
+        <div class="item"><img src="images/metal wall art/metal wall14.webp" alt="Product 1">
+
+        </div>
+        <div class="item"><img src="images/wall mounted animals/Wall mounted4.webp" alt="Product 2">
+
+        </div>
+        <div class="item"><img src="images/photo frame art/frame12.avif" alt="Product 3">
+
+        </div>
+        <div class="item"><img src="images/mirror art/mirror6.webp" alt="Product 4">
+
+        </div>
+        <div class="item"><img src="images/wall shelves/wall shelves3.webp" alt="Product 5">
+
+        </div>
+        <div class="item"><img src="images/metal wall art/metal wall10.webp" alt="Product 6">
+
+        </div>
+        <div class="item"><img src="images/wall shelves/wall shelves8.webp" alt="Product 7">
+
+        </div>
+    </div>
+
+
+    <!-- end owl carousel -->
+
+
+    <div class="main-heading">
+        <h2>Decorate Your Room in Style</h2>
+
+        <p>Transform your walls into works of art with our exclusive range of decor essentials. Discover elegance in
+            every detail.
+
+            From modern minimalism to vintage charm — find decor that speaks your style and elevates your home.
+
+            Infuse warmth, color, and character into every corner with our handpicked wall accents and decor items.
+
+            Create a space that tells your story. Our decor collections bring life, meaning, and beauty to your
+            surroundings.
+
+            Design with purpose, decorate with passion — explore our stunning pieces crafted to enhance every room.
+
+            Turn empty walls into captivating statements. Shop the latest trends in wall art, shelves, and stylish
+            accessories.
+
+        </p>
+    </div>
+
+
+
+    <!-- products -->
+
+
+    <h2 class="product-heading">Metal Wall Art</h2>
+
+    <div class="product-container">
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <a href="metal wall art product1.html">
+                <img src="images/metal wall art/metal wall11.webp" width="250" height="290" /></a>
+
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <a href="metal wall art product1 copy.html">
+                <img src="images/metal wall art/metal wall1.webp" width="250" height="290" /></a>
+                <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <a href="metal wall art product1 copy 5.html">
+                <img src="images/metal wall art/metal wall2.webp" width="250" height="290" /></a>
+                <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <a href="metal wall art product1 copy 4.html">
+                <img src="images/metal wall art/metal wall10.webp" width="250" height="290" /></a>
+                <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <a href="metal wall art product1 copy 3.html">
+                <img src="images/metal wall art/metal wall9.webp" width="250" height="290" /></a>
+                <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <a href="metal wall art product1 copy 2.html">
+                <img src="images/metal wall art/metalcwall5.webp" width="250" height="290" /></a>
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+
+            <img src="images/metal wall art/metal wall 7.webp" width="250" height="290" />
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <a href="metal wall art product1 copy 6.html">
+                <img src="images/metal wall art/metal wall4.webp" width="250" height="290" /></a>
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+        </div>
+
+
+    </div>
+
+    <div class="view-more-btn">
+        <a href="metal wall art.html" class="button">view more&nbsp; &#8594;</a>
+    </div>
+
+
+    <h2 class="product-heading product-heading2">Wall Papers</h2>
+
+    <div class="product-container">
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <a href="wall paper product1.html">
+                <img src="images/wall papers/wall paper10.avif" width="250" height="290" /></a>
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <a href="wall paper product1 copy.html">
+                <img src="images/wall papers/wall paper3.webp" width="250" height="290" /></a>
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <a href="wall paper product1 copy 2.html">
+                <img src="images/wall papers/wall paper6.webp" width="250" height="290" /></a>
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <a href="wall paper product1 copy 3.html">
+                <img src="images/wall papers/wall paper7.webp" width="250" height="290" /></a>
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <a href="wall paper product1 copy 4.html">
+                <img src="images/wall papers/wall paper9.webp" width="250" height="290" /></a>
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <a href="wall paper product1 copy 5.html">
+                <img src="images/wall papers/wall paper5.webp" width="250" height="290" /></a>
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <a href="wall paper product1 copy 6.html">
+                <img src="images/wall papers/wall paper2.webp" width="250" height="290" /></a>
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <a href="wall paper product1 copy 2.html">
+                <img src="images/wall papers/wall paper1.webp" width="250" height="290" /></a>
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+        </div>
+
+
+    </div>
+
+    <div class="view-more-btn">
+        <a href="wall papers.html" class="button">view more&nbsp; &#8594;</a>
+    </div>
+
+
+    <h2 class="product-heading product-heading3">Photo Frame Art</h2>
+
+    <div class="product-container">
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <img src="images/photo frame art/frame13.avif" width="250" height="290" />
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <img src="images/photo frame art/frame5.avif" width="250" height="290" />
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <img src="images/photo frame art/frame8.avif" width="250" height="290" />
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <img src="images/photo frame art/frame4.avif" width="250" height="290" />
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <img src="images/photo frame art/frame9.avif" width="250" height="290" />
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <img src="images/photo frame art/frame2.avif" width="250" height="290" />
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <img src="images/photo frame art/frame10.avif" width="250" height="290" />
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <img src="images/photo frame art/frame15.avif" width="250" height="290" />
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+        </div>
+
+
+    </div>
+
+
+    <div class="view-more-btn">
+        <a href="" class="button">view more&nbsp; &#8594;</a>
+    </div>
+
+    <h2 class="product-heading product-heading4">Mirror Art</h2>
+
+    <div class="product-container">
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <img src="images/mirror art/mirror10.webp" width="250" height="290" />
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <img src="images/mirror art/mirror3.webp" width="250" height="290" />
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <img src="images/mirror art/mirror6.webp" width="250" height="290" />
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <img src="images/mirror art/mirror9.webp" width="250" height="290" />
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <img src="images/mirror art/mirror4.webp" width="250" height="290" />
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <img src="images/mirror art/mirror8.webp" width="250" height="290" />
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <img src="images/mirror art/mirror11.webp" width="250" height="290" />
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <img src="images/mirror art/mirror2.webp" width="250" height="290" />
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+        </div>
+
+
+    </div>
+
+
+    <div class="view-more-btn">
+        <a href="" class="button">view more&nbsp; &#8594;</a>
+    </div>
+
+    <h2 class="product-heading product-heading5">Wall Shelves</h2>
+
+    <div class="product-container">
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <img src="images/wall shelves/wall shelves10.webp" width="250" height="290" />
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <img src="images/wall shelves/wall shelves3.webp" width="250" height="290" />
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <img src="images/wall shelves/wall shelves8.webp" width="250" height="290" />
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <img src="images/wall shelves/wall shelves5.webp" width="250" height="290" />
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <img src="images/wall shelves/wall shelves4.webp" width="250" height="290" />
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <img src="images/wall shelves/wall shelves6.webp" width="250" height="290" />
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <img src="images/wall shelves/wall shelves9.webp" width="250" height="290" />
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <img src="images/wall shelves/wall shelves2.webp" width="250" height="290" />
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+        </div>
+
+
+    </div>
+
+    <div class="view-more-btn">
+        <a href="" class="button">view more&nbsp; &#8594;</a>
+    </div>
+
+
+    <h2 class="product-heading product-heading6">Wall Mounted Animals</h2>
+
+    <div class="product-container">
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <img src="images/wall mounted animals/Wall mounted1.webp" width="250" height="290" />
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <img src="images/wall mounted animals/Wall mounted10.webp" width="250" height="290" />
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <img src="images/wall mounted animals/Wall mounted13.webp" width="250" height="290" />
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <img src="images/wall mounted animals/wall mounted15.webp" width="250" height="290" />
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <img src="images/wall mounted animals/Wall mounted5.webp" width="250" height="290" />
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <img src="images/wall mounted animals/Wall mounted7.webp" width="250" height="290" />
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <img src="images/wall mounted animals/Wall mounted2.webp" width="250" height="290" />
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <img src="images/wall mounted animals/Wall mounted6.webp" width="250" height="290" />
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+        </div>
+
+    </div>
+
+    <div class="view-more-btn">
+        <a href="" class="button">view more&nbsp; &#8594;</a>
+    </div>
+
+    <!-- customer reviews -->
+
+    <div class="customer-review-heading">
+
+        <p>Let customers speak for us</p>
+        <img src="star rating.png" alt="" width="120">
+
+
+    </div>
+
+
+
+    <div class="owl-carousel customer-reviews">
+        <div class="item">
+            <p class="review-body">"Absolutely stunning wall art! It has completely transformed my living room. The
+                quality is top-notch and delivery was super fast."</p>
+            <p class="customer-name">- Aasma Qayuum</p>
+            <img src="images/metal wall art/pic 1 customer (1).jpg" alt="" width="100" height="100">
+        </div>
+        <div class="item">
+            <p class="review-body">"I bought the metal wall shelves and they look even better in person. Installation
+                was easy and the packaging was perfect."</p>
+            <p class="customer-name">- Kinza Hashmi</p>
+            <img src="images/metal wall art/pic 1 customer (2).jpg" alt="" width="200" height="200">
+        </div>
+        <div class="item">
+            <p class="review-body">"Great experience shopping at Jensen Decors. Their wallpapers added a classy touch to
+                my study room. Highly recommended!"</p>
+            <p class="customer-name">- Farhat Khan</p>
+            <img src="images/metal wall art/pic 1 customer (3).jpg" alt="" width="100" height="200">
+        </div>
+
+        <div class="item">
+            <p class="review-body">"I ordered a mirror art piece for my hallway and it’s a showstopper! Everyone asks
+                where I got it from. Totally worth it!"</p>
+            <p class="customer-name">- Danyal Zafar</p>
+            <img src="images/metal wall art/pic 1 customer (4).jpg" alt="" width="100" height="200">
+        </div>
+
+        <div class="item">
+            <p class="review-body">"Superb craftsmanship and beautiful designs. The animal wall mounts are so unique —
+                love the creativity!"</p>
+            <p class="customer-name">- karishma kapoor</p>
+            <img src="images/metal wall art/pic 1 customer (5).jpg" alt="" width="100" height="200">
+        </div>
+
+        <div class="item">
+            <p class="review-body">"The website was easy to navigate and the customer service was very responsive. The
+                photo frame set I received was exactly what I wanted."</p>
+            <p class="customer-name">- Waseem khan</p>
+            <img src="images/metal wall art/pic 1 customer (6).jpg" alt="" width="100" height="200">
+        </div>
+
+
+    </div>
+
+
+    <!-- Footer -->
+
+    <footer class="footer">
+        <div class="footer-container">
+
+
+            <div class="footer-logo">
+                <img src="jensen-decors-high-resolution-logo-transparent.png" alt="" width="110px" height="80px">
+
+                <div class="app-download">
+                    <h4>Download our app</h4>
+                    <div>
+                        <img src="google play png.png" alt="" width="120px" height="130px">
+                        <img src="app store png.png" alt="" width="120px" height="45px">
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Contact us</a></li>
+                    <li><a href="#">All Products</a></li>
+                    <li><a href="#">Featured products</a></li>
+                    <li><a href="#">Track Your Order</a></li>
+                    <li><a href="#">Jobs</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Policies</h4>
+                <ul>
+                    <li><a href="#">Return & Refund Policy</a></li>
+                    <li><a href="#">Shipping Policiy</a></li>
+                    <li><a href="#">Terms & Condition</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+
+                <br>
+
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-x"></i></a>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="footer-links">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="#">WhatsApp: +923152893207</a></li>
+
+                    <li><a href="#">Outlet #1: Metro Cash n Carry Parking, Thokar Niaz Baig, Lahore</a></li>
+                    <li><a href="#">Outlet #2 : 1st floor, kiddyLand, Besides Al-Nassar-PIA Main Boulevard, Lahore</a>
+                    </li>
+                    <li><a href="#">Outlet #3: Tanki wali gali, Ichra Bazar, Lahore</a></li>
+                    <li><a href="#">Outlet # 4: Our Okara branch is located in HOME MART M A jinnah Road</a></li>
+                    <li><a href="#">Office Address: 782-G4-JOHAR TOWN, LHR</a></li>
+
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            &copy; 2025 Jensen Decors. All Rights Reserved.
+        </div>
+    </footer>
+
+
+
+
+
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+
+    <script>
+
+        //   animmation text on pic
+
+        const text = "with style and comfort...";
+        const element = document.getElementById("typing-text");
+
+        let index = 0;
+
+        function typeCharacter() {
+            if (index < text.length) {
+                element.innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeCharacter, 35); // Typing speed
+            } else {
+                setTimeout(() => {
+                    element.innerHTML = "";    // Clear text
+                    index = 0;                 // Reset index
+                    typeCharacter();           // Restart typing
+                }, 4000); // Wait 4 seconds before starting again
+            }
+        }
+
+        typeCharacter();
+
+
+        // java script for owl carousel using jquery:
+
+        $(document).ready(function () {
+            $(".owl-carousel").owlCarousel({
+                items: 4,
+                margin: 10,
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 1400,
+
+                nav: true,
+                dots: true,
+                center: true,
+                animateOut: 'fadeOut',
+                responsive: {
+                    // 0, 600, 900, 1100 define media query
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 2
+                    },
+                    900: {
+                        items: 3
+                    },
+                    1100: {
+                        items: 4
+                    }
+                }
+            });
+        });
+
+
+        // for customer reviews container owl carousel :
+
+
+        $('.customer-reviews').owlCarousel({
+            loop: true,
+            items: 3,
+            margin: 20,
+            autoplay: true,
+            autoplayTimeout: 1700,
+            responsive: {
+                0: { items: 1 },
+                768: { items: 2 },
+                1000: { items: 3 }
+            }
+        });
+
+
+        // Toggle search input:
+
+        const searchIcon = document.getElementById("search-icon");
+        const searchBox = document.getElementById("search-box");
+        const closeSearch = document.getElementById("close-search");
+
+        searchIcon.addEventListener("click", () => {
+            searchBox.style.display = searchBox.style.display === "block" ? "none" : "block";
+
+        });
+
+        // searchIcon.addEventListener("click", () => {
+        //   searchBox.style.display = "block";
+        // });
+
+        closeSearch.addEventListener("click", () => {
+            searchBox.style.display = "none";
+        });
+
+        // Sidebar toggle:
+
+        const menuToggle = document.getElementById("menu-toggle");
+        const sidebar = document.getElementById("sidebar");
+        const closeSidebar = document.getElementById("close-sidebar");
+
+        menuToggle.addEventListener("click", () => {
+            sidebar.classList.add("active");
+        });
+
+        closeSidebar.addEventListener("click", () => {
+            sidebar.classList.remove("active");
+        });
+    </script>
+</body>
+
+</html>

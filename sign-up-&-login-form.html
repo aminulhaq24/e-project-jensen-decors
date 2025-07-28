@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>wall paper product1</title>
+    <title>sign up</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
 
@@ -17,11 +17,9 @@
         }
 
         body {
-
+            height: 100%;
             font-family: Arial, sans-serif;
         }
-
-
 
         .container {
             position: absolute;
@@ -31,10 +29,10 @@
 
             background-color: #1c1919;
             z-index: 1;
-            position: fixed;
+              position: fixed;
         }
 
-        .navbar {
+       .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -54,7 +52,7 @@
             padding: 0;
         }
 
-        .nav-links>ul>li>a {
+            .nav-links>ul>li>a {
             text-decoration: none;
             color: rgb(255, 251, 249);
             font-weight: bold;
@@ -71,7 +69,7 @@
 
         }
 
-        .nav-links>ul>li:hover {
+        .nav-links>ul>li:hover  {
             border-bottom: 4px solid green;
         }
 
@@ -206,7 +204,7 @@
             margin-right: 7px;
         }
 
-        a i.fa-user {
+         a i.fa-user {
             color: white;
         }
 
@@ -357,188 +355,184 @@
             left: 230px;
         }
 
+        /* form styling */
 
-        marquee {
-            background-color: #bb5d1578;
-            padding: 10px;
-
-
-        }
-
-        marquee p {
-            display: inline-block;
-            margin-right: 700px;
-            color: green;
-            font-size: 22px;
-            font-family: cursive, fantasy;
-            word-spacing: 2px;
-
-        }
-
-        .product-detail {
+        .form-container {
+            margin: 230px auto 100px auto;
             display: flex;
-            justify-content: space-evenly;
-            margin-top: 90px;
-            margin-bottom: 130px;
-            flex-wrap: wrap;
-
-        }
-
-        .product-img {
-            margin-left: -60px;
-
-        }
-
-        .product-info {
-            margin-left: -240px;
-
-        }
-
-        .product-info img {
-            margin-bottom: 10px;
-        }
-
-        .product-info p {
-            word-wrap: break-word;
-            display: block;
-            max-width: 500px;
-            line-height: 35px;
-        }
-
-
-        /* quantity selector */
-
-
-        .quantity-container {
-            margin-top: 20px;
-            font-family: Arial, sans-serif;
-
-        }
-
-        .q-heading {
-            margin-bottom: 17px;
-            display: inline-block;
-            margin-left: 4px;
-        }
-
-        .quantity-selector {
-            display: flex;
+            justify-content: center;
             align-items: center;
-            border: 1px solid #ccc;
-            width: 130px;
-            padding: 8px 12px;
-            border-radius: 10px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-            justify-content: space-between;
+            flex-direction: column;
+            text-align: center;
+            height: 100%;
+            
         }
 
-        .qty-btn {
-            background: none;
-            border: none;
-            font-size: 20px;
+        /* Toggle Switch Styling */
+        .toggle-wrapper {
+            display: flex;
+            /* justify-content: center; */
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            border: 2px solid rgb(35, 35, 35);
+            padding: 20px 16px;
+            border-radius: 34px;
+           background-color: #f7f4f4;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 28px;
+
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
             cursor: pointer;
-            padding: 0 10px;
-            color: #444;
+            background-color: #ccc;
+            border-radius: 34px;
+            top: -5px;
+            left: 0;
+            right: 0;
+            bottom: 5px;
+            transition: 0.2s;
+
+        }
+
+        .slider::before {
+            position: absolute;
+            content: "";
+            height: 22px;
+            width: 22px;
+            left: 4px;
+            bottom: 3px;
+            background-color: white;
+            border-radius: 50%;
+            transition: 0.2s;
+        }
+
+        input:checked+.slider {
+            background-color: #d86b23;
+        }
+
+        input:checked+.slider::before {
+            transform: translateX(32px);
+        }
+
+
+        #login-label {
             font-weight: bold;
+            margin-left: 10px;
         }
 
-        #quantity {
-            font-size: 16px;
-            width: 20px;
-            text-align: center;
+        #signup-label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* Form Box Styling */
+        .form-box {
+            background: white;
+            width: 90%;
+            max-width: 400px;
+            margin: 70px auto 90px auto;
+            padding: 30px 30px 1px 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            height: 500px;
+           background-color: #f7f4f4;
+
+            display: flex;
+            flex-direction: column;
+
+            align-items: center;
+            gap: 10px;
+
+        }
+
+        /* .form-box input {
+            width: 80%;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            
+            margin: 50px 40px -140px;
+        } */
+        .h3 {
+            margin-top: 25px;
+            font-size: 1.8rem;
+
+        }
+
+        .form-box input {
+            width: 80%;
+            padding: 10px;
+        }
+
+        .form-box .input1 {
+            margin: 50px 0 56px;
+        }
+
+        .form-box .input2 {
+            margin: -80px 0 0;
+        }
+
+        .form-box .input3 {
+            margin: -23px;
+
         }
 
 
-        /* add to cart */
-
-        .add-to-cart {
-            width: 490px;
-            padding: 12px 30px;
-            text-align: center;
-            display: inline-block;
-            border: 2px solid rgb(43, 151, 13);
-            border-radius: 7px;
-            text-decoration: none;
-            color: #050505;
+        #login-form {
+            height: 400px;
         }
 
-        .add-to-cart:hover {
-            background-color: rgba(183, 179, 179, 0.58);
-            border: none;
-            color: rgb(35, 31, 31);
+        #login-form .input1 {
+            margin: 45px;
         }
 
+        #login-form .input2 {
+            margin: -72px;
+        }
 
-        .animated-button {
-            display: inline-block;
-            padding: 13px 30px;
-            font-size: 16px;
-            width: 490px;
-            text-align: center;
+        #login-form a {
+            margin: 70px;
+        }
+
+        /* .form-box a {
+            padding: 10px 20px;
             background-color: #d86b23;
             color: white;
             border: none;
-            border-radius: 7px;
+            border-radius: 5px;
+            cursor: pointer;
             text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            animation: shakeSides 1.5s infinite alternate;
-            box-shadow: 0 4px 10px rgba(216, 107, 35, 0.4);
-        }
+            margin: 80px 140px;
+            display: inline-block;
+        } */
 
-        .animated-button:hover {
-            background-color: #bb5e15;
-            box-shadow: 0 6px 15px rgba(216, 107, 35, 0.5);
-        }
-
-        @keyframes shakeSides {
-            0% {
-                transform: translatex(0);
-                transform: rotatex(90deg);
-            }
-
-            25% {
-                transform: translatex(-5px);
-            }
-
-            50% {
-                transform: translatex(5px);
-            }
-
-            75% {
-                transform: translatex(-5px);
-            }
-
-            100% {
-                transform: translatex(0);
-            }
-        }
-
-
-        .download-detail {
-            display: flex;
-            margin: 50px auto;
-            justify-content: center;
-            margin-top: -100px;
-            margin-bottom: 90px;
-            margin-left: 160px;
-
-        }
-
-        .download-button {
+        .form-box a {
+            padding: 10px 40px;
+            background-color: #d86b23;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
             text-decoration: none;
-            background-color: #201e1e;
-            padding: 12px 50px;
-            color: #fff8f0;
-            border-radius: 10px;
-
+            display: inline-block;
+            margin-top: 20px;
         }
-
-        .download-button:hover {
-            transform: scale(1.1);
-            transition: all 0.2s ease-in-out;
-        }
-
 
 
 
@@ -548,7 +542,7 @@
         .footer {
             background-color: #201e1e;
             color: #fff8f0;
-            padding: 40px 0px 20px;
+            padding: 30px 0px 20px;
             font-family: 'Arial', sans-serif;
         }
 
@@ -570,7 +564,7 @@
 
         .footer-links h4,
         .footer-social h4 {
-            margin-bottom: -7px;
+
             color: #d86b23;
             margin-top: 30px;
         }
@@ -615,14 +609,14 @@
 
         .app-download h4 {
             margin-bottom: 0px;
-            margin-top: 30px;
+            margin-top: 20px;
         }
 
 
         .footer-logo img {
-            margin: 10px;
-            margin-bottom: 40px;
-            margin-top: 37px;
+            margin: 6px;
+            margin-bottom: 30px;
+            margin-top: 40px;
 
         }
 
@@ -654,10 +648,6 @@
 
             }
 
-            .navbar {
-                width: 100%;
-            }
-
             .fa-bars {
                 display: block;
                 padding-right: 6px;
@@ -671,6 +661,7 @@
                 margin-left: 2px;
             }
 
+
             .footer-container {
                 margin-left: 8px;
             }
@@ -680,18 +671,11 @@
                 width: 48%;
                 display: inline-block;
                 vertical-align: top;
-
             }
-
-
 
             .footer-social {
-                margin-top: 5px;
-
-            }
-
-            .footer-social ul {
-                margin-top: 10px;
+                margin-top: 0;
+                order: 4;
             }
 
             .footer-logo {
@@ -703,114 +687,16 @@
                 margin-top: -1px;
             }
 
-
-
-            .product-detail {
-                flex-direction: column;
-                align-items: center;
-                margin-top: 60px;
-                margin-bottom: 60px;
-
+            .about-section {
+                margin: 2vw;
             }
 
-            .product-img {
-                margin-left: 0;
-                text-align: center;
+            .about-section h1 {
+                margin: 1vw;
             }
 
-            .product-img img {
-                width: 90%;
-                height: auto;
-            }
 
-            .product-info {
-                margin-left: 0;
-                padding: 10px;
-                text-align: left;
-            }
-
-            .product-info img {
-                width: 95%;
-                height: auto;
-                margin-left: 8px;
-            }
-
-            .product-info p {
-                max-width: 100%;
-                font-size: 16px;
-                line-height: 28px;
-                margin-left: 4px;
-            }
-
-            .span {
-                display: block;
-                text-align: left;
-                margin-top: 10px;
-                margin-left: -15px;
-                width: 100vw;
-                text-align: center;
-            }
-
-            .quantity-container {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                margin-left: 4px;
-            }
-
-            .quantity-selector {
-                width: 100px;
-                padding: 6px 10px;
-            }
-
-            .add-to-cart,
-            .animated-button {
-                width: 90%;
-                padding: 10px 15px;
-                font-size: 15px;
-                margin-left: 18px;
-            }
-
-            .download-detail {
-                margin: 30px auto;
-                justify-content: center;
-                margin-left: 0;
-                text-align: center;
-            }
-
-            .download-button {
-                padding: 10px 30px;
-                font-size: 16px;
-                margin-top: -30px;
-                margin-bottom: 30px;
-            }
         }
-
-        /*             
-            .product-detail{
-                width: 100%;
-                
-            }
-          .product-detail  .product-img{
-               margin: 50px 0px;
-               width: 100%;
-
-            }
-
-          .product-detail  .product-info {
-            width: 100%;
-          }
-
-          .product-detail .product-info img, p, .span {
-            width: 100%;
-            margin-left: 100px; 
-            margin-right: 10px;
-          }
-           
-
-          .quantity-container {
-            margin-left: 130px;
-          } */
     </style>
 </head>
 
@@ -821,8 +707,7 @@
             <div class="navbar">
                 <!-- Logo -->
                 <div class="logo">
-                    <a href="index.html"><img src="jensen-decors-high-resolution-logo-transparent.png"
-                            alt="jensen decors"></a>
+                    <img src="jensen-decors-high-resolution-logo-transparent.png" alt="jensen decors">
                 </div>
 
 
@@ -839,7 +724,7 @@
                                 <ul>
                                     <li class="shop-menu1">
 
-                                        <a href="metal wall art.html">Metal wall art</a>
+                                        <a href="metal-wall-art.html">Metal wall art</a>
                                         <i class="fa fa-angle-right" style="margin-left: 73px;"></i>
                                         <ul class="dropdown1">
 
@@ -855,7 +740,7 @@
 
                                     <li class="shop-menu1">
 
-                                        <a href="wall papers.html">Wall papers</a>
+                                        <a href="wall-papers.html">Wall papers</a>
                                         <i class="fa fa-angle-right" style="margin-left: 88px;"></i>
                                         <ul class="dropdown1 dropdown2">
 
@@ -873,7 +758,7 @@
 
                                     <li class="shop-menu1">
 
-                                        <a href="photo frame art.html">Photo frame art</a>
+                                        <a href="photo-frame-art.html">Photo frame art</a>
                                         <i class="fa fa-angle-right" style="margin-left: 58px;"></i>
                                         <ul class="dropdown1 dropdown3">
 
@@ -889,7 +774,7 @@
 
                                     <li class="shop-menu1">
 
-                                        <a href="mirror art.html">Mirror art</a>
+                                        <a href="mirror-art.html">Mirror art</a>
                                         <i class="fa fa-angle-right" style="margin-left: 102px;"></i>
                                         <ul class="dropdown1 dropdown4">
 
@@ -906,7 +791,7 @@
 
                                     <li class="shop-menu1">
 
-                                        <a href="wall shelves.html">Wall shelves</a>
+                                        <a href="wall-shelves.html">Wall shelves</a>
                                         <i class="fa fa-angle-right" style="margin-left: 86px;"></i>
                                         <ul class="dropdown1 dropdown5">
 
@@ -923,7 +808,7 @@
 
                                     <li class="shop-menu1">
 
-                                        <a href="wall mounted animals.html">Wall mounted animals</a>
+                                        <a href="wall-mounted-animals.html">Wall mounted animals</a>
                                         <i class="fa fa-angle-right" style="margin-left: 10px;"></i>
                                         <ul class="dropdown1 dropdown6">
 
@@ -942,8 +827,8 @@
 
                         </li>
 
-                        <li><a href="about us.html">About us</a></li>
-                        <li><a href="contact us.html">Contact us</a></li>
+                        <li><a href="about-us.html">About us</a></li>
+                        <li><a href="contact-us.html">Contact us</a></li>
 
                     </ul>
                 </div>
@@ -951,8 +836,8 @@
                 <!-- Icons -->
                 <div class="icons">
                     <i class="fa fa-search" id="search-icon"></i>
+                    <i class="fa fa-user"></i>
                     <i class="fa-solid fa-cart-shopping"></i>
-                    <a href="sign up and login form.html"><i class="fa fa-user"></i></a>
                     <i class="fa fa-bars" id="menu-toggle"></i>
                 </div>
 
@@ -969,64 +854,41 @@
     <div class="sidebar" id="sidebar">
         <div class="close-btn" id="close-sidebar"><i class="fa fa-times"></i></div>
         <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index">Home</a></li>
+            <li><a href="about-us.html">About us</a></li>
+            <li><a href="contact-us.html">Contact us</a></li>
             <li><a href="#">Shop</a></li>
-            <li><a href="about us.html">About us</a></li>
-            <li><a href="contact us.html">Contact us</a></li>
         </ul>
     </div>
 
-    <marquee behavior="scroll" loop="infinite" onmouseover="stop()" onmouseout="start()">
-        <p>Price Adjustment within 20 days</p>
-        <p>Free shipping on all orders</p>
-        <p>Price Adjustment within 20 days</p>
-        <p>Free shipping on all orders</p>
-    </marquee>
 
+    <!-- signup login form -->
 
-    <!-- product detail -->
-
-    <div class="product-detail">
-        <div class="product-img">
-            <img src="images/wall papers/wall paper3.webp" alt="" width="400" height="500">
+    <div class="form-container">
+        <div class="toggle-wrapper">
+            <span id="signup-label">Sign Up</span>
+            <label class="switch">
+                <input type="checkbox" id="form-toggle">
+                <span class="slider"></span>
+            </label>
+            <span id="login-label">Login</span>
         </div>
 
-        <div class="product-info">
-            <img src="metal 20.png" alt="" width="500">
-            <p>1pc Elegant Butterfly Welcome Sign - Contemporary Metal Wall Art with Floral Accents, Ideal for Home &
-                Office Decor, Living Room, Bedroom, Patio, Kitchen, Cafe, Bar, Country Farmhouse Style - Perfect
-                Housewarming or Birthday Gift, Butterfly Decoration</p><br>
-            <div class="span">
-                <span style="font-size: 12px;">Rs.</span>&nbsp; <span
-                    style="font-size: 22px; color: rgb(245, 122, 7);">3,605</span>
-                <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
-                <span style="font-size: 12px; color: #8f8282;">3.1k sold</span> &nbsp; &nbsp;<span
-                    style="border: 1px solid; padding: 4px; color: #d86b23;">30% OFF limited time</span>
-            </div>
-            <div class="quantity-container">
-                <label for="quantity" class="q-heading">Quantity</label>
-                <div class="quantity-selector">
-                    <button class="qty-btn" onclick="decreaseQty()">−</button>
-                    <span id="quantity">1</span>
-                    <button class="qty-btn" onclick="increaseQty()">+</button>
-                </div>
-            </div>
+        <div id="signup-form" class="form-box">
+            <h3 class="h3">Create Your Account</h3>
 
-            <br><br>
-            <a href="sign up & login form.html" class="add-to-cart">Add to Cart</a>
-
-            <br><br>
-            <a href="sign up & login form.html" class="animated-button"><i
-                    class="fas fa-shipping-fast"></i>&nbsp;&nbsp;Buy with cash on
-                delivery</a>
-
-
+            <input type="text" class="input1" placeholder="Name" required><br><br>
+            <input type="email" class="input2" placeholder="Email" required><br><br>
+            <input type="password" class="input3" placeholder="Password" required><br><br>
+            <a href="">Sign Up</a>
         </div>
-    </div>
 
-
-    <div class="download-detail">
-        <a href="Jensen Decors Product Detail.docx" download class="download-button">Download Product Info</a>
+        <div id="login-form" class="form-box" style="display: none;">
+            <h3 class="h3">Login Your Account</h3>
+            <input type="email" class="input1" placeholder="Email" required><br><br>
+            <input type="password" class="input2" placeholder="Password" required><br><br>
+            <a href="">Login</a>
+        </div>
     </div>
 
     <!-- Footer -->
@@ -1052,10 +914,10 @@
             <div class="footer-links">
                 <h4>Quick Links</h4><br>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index">Home</a></li>
                     <li><a href="#">Shop</a></li>
-                    <li><a href="about us.html">About us</a></li>
-                    <li><a href="contact us.html">Contact us</a></li>
+                    <li><a href="about-us.html">About us</a></li>
+                    <li><a href="contact-us.html">Contact us</a></li>
                     <li><a href="#">All Products</a></li>
                     <li><a href="#">Featured products</a></li>
                     <li><a href="#">Track Your Order</a></li>
@@ -1078,10 +940,10 @@
                 <div class="footer-social">
                     <h4>Follow Us</h4><br>
                     <div class="social-icons">
-                        <a href="facebook.com"><i class="fab fa-facebook-f"></i></a>
-                        <a href="instagram.com"><i class="fab fa-instagram"></i></a>
-                        <a href="pinterst.com"><i class="fab fa-pinterest-p"></i></a>
-                        <a href="x.com"><i class="fab fa-x"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-x"></i></a>
                     </div>
 
                 </div>
@@ -1117,6 +979,22 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script>
+
+        // sign login form toggle button
+
+        $(document).ready(function () {
+            $('#form-toggle').change(function () {
+                if ($(this).is(':checked')) {
+                    $('#signup-form').slideUp();
+                    $('#login-form').slideDown();
+                } else {
+                    $('#login-form').slideUp();
+                    $('#signup-form').slideDown();
+                }
+            });
+        });
+
+
         // Toggle search input:
 
         const searchIcon = document.getElementById("search-icon");
@@ -1149,27 +1027,6 @@
         closeSidebar.addEventListener("click", () => {
             sidebar.classList.remove("active");
         });
-
-
-        // quantity selecter:
-
-
-        let quantity = 1;
-        const qtyDisplay = document.getElementById('quantity');
-
-        function increaseQty() {
-            quantity++;
-            qtyDisplay.textContent = quantity;
-        }
-
-        function decreaseQty() {
-            if (quantity > 1) {
-                quantity--;
-                qtyDisplay.textContent = quantity;
-            }
-        }
-
-
     </script>
 </body>
 

@@ -3,8 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sign up</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <meta name="description" content="Elevate your interior with exquisite mirror art. Browse our collection of creative designs that add depth and beauty to any room in your home">    
+    <title>Transform Your Space with Stunning Mirror Art Designs | jensen decors</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
 
@@ -17,9 +18,11 @@
         }
 
         body {
-            height: 100%;
+
             font-family: Arial, sans-serif;
         }
+
+        
 
         .container {
             position: absolute;
@@ -32,7 +35,7 @@
               position: fixed;
         }
 
-       .navbar {
+        .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -52,12 +55,12 @@
             padding: 0;
         }
 
-            .nav-links>ul>li>a {
+        .nav-links>ul>li>a {
             text-decoration: none;
             color: rgb(255, 251, 249);
             font-weight: bold;
             font-family: Georgia, 'Times New Roman', Times, serif;
-            padding: 23px 23px 21px 23px;
+            padding: 23px 23px 19px 23px;
         }
 
         .nav-links>ul>li>a:hover {
@@ -69,9 +72,9 @@
 
         }
 
-        .nav-links>ul>li:hover  {
+        /* .nav-links>ul>li:hover {
             border-bottom: 4px solid green;
-        }
+        } */
 
 
 
@@ -99,7 +102,7 @@
             border-radius: 9px;
             box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.2);
             display: none;
-            z-index: 4444;
+            width: 650px;
             background-color: white;
             box-shadow: 0 0 15px #050505;
 
@@ -110,6 +113,7 @@
             font-size: 14px;
             border: 1px solid #ccc;
             border-radius: 9px;
+            width: 650px;
         }
 
         .search-close {
@@ -174,7 +178,7 @@
             font-size: 20px;
             text-align: right;
             cursor: pointer;
-            color: rgb(4, 4, 4);
+            color: rgb(13, 13, 12);
             margin-bottom: 20px;
         }
 
@@ -189,14 +193,14 @@
       
        } */
 
-        .fa-bars {
-            display: none;
-        }
-
         .icons i:hover {
             color: #d86b23;
             transform: scale(1.3);
 
+        }
+
+        .fa-bars {
+            display: none;
         }
 
         .fa-user,
@@ -204,7 +208,7 @@
             margin-right: 7px;
         }
 
-         a i.fa-user {
+        a i.fa-user {
             color: white;
         }
 
@@ -229,7 +233,6 @@
         }
 
 
-
         .shop-menu .dropdown {
             display: none;
             position: absolute;
@@ -242,6 +245,7 @@
             min-width: 270px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
+
 
         .shop-menu:hover .dropdown {
             display: block;
@@ -259,8 +263,8 @@
         .dropdown ul li a {
             color: rgb(7, 7, 7);
             margin-left: 14px;
-            text-decoration: none;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-decoration: none;
         }
 
         .dropdown ul li:hover {
@@ -287,6 +291,7 @@
             transition: opacity 0.2s ease;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
+
 
 
         .shop-menu1:hover .dropdown1 {
@@ -355,189 +360,95 @@
             left: 230px;
         }
 
-        /* form styling */
 
-        .form-container {
-            margin: 230px auto 100px auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            text-align: center;
-            height: 100%;
-            
+       .product-catagry-page-main-heading {
+            margin: 140px 10vw 90px 10vw;
+            font-size: 2.7rem;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         }
 
-        /* Toggle Switch Styling */
-        .toggle-wrapper {
-            display: flex;
-            /* justify-content: center; */
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 30px;
-            border: 2px solid rgb(35, 35, 35);
-            padding: 20px 16px;
-            border-radius: 34px;
-           background-color: #f7f4f4;
-        }
-
-        .switch {
-            position: relative;
-            display: inline-block;
-            width: 60px;
-            height: 28px;
-
-        }
-
-        .switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            background-color: #ccc;
-            border-radius: 34px;
-            top: -5px;
-            left: 0;
-            right: 0;
-            bottom: 5px;
-            transition: 0.2s;
-
-        }
-
-        .slider::before {
-            position: absolute;
+        .product-catagry-page-main-heading::after {
             content: "";
-            height: 22px;
-            width: 22px;
-            left: 4px;
-            bottom: 3px;
-            background-color: white;
-            border-radius: 50%;
-            transition: 0.2s;
+            width: 100%;
+            height: 1px;
+            display: block;
+            margin: 15px 0vw;
+            background-color: #201e1e;
         }
 
-        input:checked+.slider {
-            background-color: #d86b23;
-        }
-
-        input:checked+.slider::before {
-            transform: translateX(32px);
-        }
+        /* .hr1 {
+            width: 80vw;
+            margin-left: 4.5vw;
+            margin-top: -50px;
+        } */
 
 
-        #login-label {
-            font-weight: bold;
-            margin-left: 10px;
-        }
+        /* product */
 
-        #signup-label {
-            font-weight: bold;
-            margin-right: 10px;
-        }
 
-        /* Form Box Styling */
-        .form-box {
-            background: white;
-            width: 90%;
-            max-width: 400px;
-            margin: 70px auto 90px auto;
-            padding: 30px 30px 1px 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            height: 500px;
-           background-color: #f7f4f4;
-
-            display: flex;
-            flex-direction: column;
-
-            align-items: center;
-            gap: 10px;
-
-        }
-
-        /* .form-box input {
-            width: 80%;
-            padding: 10px;
+        .product-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 5px;
-            
-            margin: 50px 40px -140px;
-        } */
-        .h3 {
-            margin-top: 25px;
-            font-size: 1.8rem;
-
-        }
-
-        .form-box input {
-            width: 80%;
-            padding: 10px;
-        }
-
-        .form-box .input1 {
-            margin: 50px 0 56px;
-        }
-
-        .form-box .input2 {
-            margin: -80px 0 0;
-        }
-
-        .form-box .input3 {
-            margin: -23px;
+            flex-wrap: wrap;
+            gap: 50px;
+            margin: 50px 10vw;
 
         }
 
 
-        #login-form {
-            height: 400px;
+        .product:hover {
+            box-shadow: 1px 6px 10px rgb(147, 143, 143);
+            transform: scale(1.05);
+            transition: all 0.3s ease-in-out;
+            border-radius: 7px;
+            border: 1px solid green;
         }
 
-        #login-form .input1 {
-            margin: 45px;
+        .product {
+            padding: 8px;
+
         }
 
-        #login-form .input2 {
-            margin: -72px;
+        .product img {
+            border-top-left-radius: 7px;
+            border-top-right-radius: 7px;
         }
 
-        #login-form a {
-            margin: 70px;
+        .product h4 {
+            font-size: 12px;
+            font-weight: 400;
+            color: #8f8282;
+            padding: 4px 0;
         }
 
-        /* .form-box a {
-            padding: 10px 20px;
-            background-color: #d86b23;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            margin: 80px 140px;
+
+        .product-cart {
             display: inline-block;
-        } */
+            margin-top: 14px;
+            margin-left: 33px;
+            border: 1px solid rgba(235, 9, 9, 0.227);
+            background-color: #fb55083b;
+            padding: 2px 0px 0px 12px;
+            border-radius: 34px;
+            margin-top: 11px;
+            width: 40px;
+            margin-bottom: 12px;
 
-        .form-box a {
-            padding: 10px 40px;
-            background-color: #d86b23;
-            color: white;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 20px;
+
         }
 
+        .product-cart:hover {
+            background-color: #082cfb1a;
+            transform: scale(1.2);
+        }
+
+        .product-cart img {
+            width: 16px;
+        }
 
 
         /* footer */
-
 
         .footer {
             background-color: #201e1e;
@@ -616,7 +527,7 @@
         .footer-logo img {
             margin: 6px;
             margin-bottom: 30px;
-            margin-top: 40px;
+            margin-top: 37px;
 
         }
 
@@ -661,6 +572,14 @@
                 margin-left: 2px;
             }
 
+              .search-box {
+                width: 330px;
+            }
+
+            .search-box input {
+                width: 330px;
+            }
+
 
             .footer-container {
                 margin-left: 8px;
@@ -687,14 +606,9 @@
                 margin-top: -1px;
             }
 
-            .about-section {
-                margin: 2vw;
+            .product-catagry-page-main-heading {
+                font-size: 1.9rem;
             }
-
-            .about-section h1 {
-                margin: 1vw;
-            }
-
 
         }
     </style>
@@ -707,7 +621,8 @@
             <div class="navbar">
                 <!-- Logo -->
                 <div class="logo">
-                    <img src="jensen-decors-high-resolution-logo-transparent.png" alt="jensen decors">
+                    <a href="index.html"><img src="jensen-decors-high-resolution-logo-transparent.png"
+                            alt="jensen decors"></a>
                 </div>
 
 
@@ -724,8 +639,8 @@
                                 <ul>
                                     <li class="shop-menu1">
 
-                                        <a href="metal wall art.html">Metal wall art</a>
-                                        <i class="fa fa-angle-right" style="margin-left: 73px;"></i>
+                                        <a href="metal-wall-art.html">Metal wall art</a>
+                                        <i class="fa fa-angle-right" style="margin-left: 88px;"></i>
                                         <ul class="dropdown1">
 
                                             <li><a href="#">Abstract Designs</a></li>
@@ -740,8 +655,8 @@
 
                                     <li class="shop-menu1">
 
-                                        <a href="wall papers.html">Wall papers</a>
-                                        <i class="fa fa-angle-right" style="margin-left: 88px;"></i>
+                                        <a href="wall-papers.html">Wall papers</a>
+                                        <i class="fa fa-angle-right" style="margin-left: 99px;"></i>
                                         <ul class="dropdown1 dropdown2">
 
                                             <li><a href="#">Textured</a></li>
@@ -758,8 +673,8 @@
 
                                     <li class="shop-menu1">
 
-                                        <a href="photo frame art.html">Photo frame art</a>
-                                        <i class="fa fa-angle-right" style="margin-left: 58px;"></i>
+                                        <a href="photo-frame-art.html">Photo frame art</a>
+                                        <i class="fa fa-angle-right" style="margin-left: 70px;"></i>
                                         <ul class="dropdown1 dropdown3">
 
                                             <li><a href="#">Collage Frames</a></li>
@@ -774,8 +689,8 @@
 
                                     <li class="shop-menu1">
 
-                                        <a href="mirror art.html">Mirror art</a>
-                                        <i class="fa fa-angle-right" style="margin-left: 102px;"></i>
+                                        <a href="mirror-art.html">Mirror art</a>
+                                        <i class="fa fa-angle-right" style="margin-left: 117px;"></i>
                                         <ul class="dropdown1 dropdown4">
 
                                             <li><a href="#">Round Mirrors</a></li>
@@ -791,8 +706,8 @@
 
                                     <li class="shop-menu1">
 
-                                        <a href="wall shelves.html">Wall shelves</a>
-                                        <i class="fa fa-angle-right" style="margin-left: 86px;"></i>
+                                        <a href="wall-shelves.html">Wall shelves</a>
+                                        <i class="fa fa-angle-right" style="margin-left: 92px;"></i>
                                         <ul class="dropdown1 dropdown5">
 
                                             <li><a href="#">Floating Shelves</a></li>
@@ -808,8 +723,8 @@
 
                                     <li class="shop-menu1">
 
-                                        <a href="wall mounted animals.html">Wall mounted animals</a>
-                                        <i class="fa fa-angle-right" style="margin-left: 10px;"></i>
+                                        <a href="wall-mounted-animals.html">Wall mounted animals</a>
+                                        <i class="fa fa-angle-right" style="margin-left: 19px;"></i>
                                         <ul class="dropdown1 dropdown6">
 
                                             <li><a href="#">Wooden Deer Heads</a></li>
@@ -827,8 +742,8 @@
 
                         </li>
 
-                        <li><a href="about us.html">About us</a></li>
-                        <li><a href="contact us.html">Contact us</a></li>
+                        <li><a href="about-us.html">About us</a></li>
+                        <li><a href="contact-us.html">Contact us</a></li>
 
                     </ul>
                 </div>
@@ -854,42 +769,158 @@
     <div class="sidebar" id="sidebar">
         <div class="close-btn" id="close-sidebar"><i class="fa fa-times"></i></div>
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Contact us</a></li>
-            <li><a href="#">Categories</a></li>
+            <li><a href="index.html">Home</a></li>
+            <a href="sign-up-&-login-form.html"><i class="fa fa-user"></i></a>
+            <li><a href="about-us.html">About us</a></li>
+            <li><a href="contact-us.html">Contact us</a></li>
         </ul>
     </div>
 
 
-    <!-- signup login form -->
+    <div class="product-catagry-page-main-heading">Mirror Art</div>
 
-    <div class="form-container">
-        <div class="toggle-wrapper">
-            <span id="signup-label">Sign Up</span>
-            <label class="switch">
-                <input type="checkbox" id="form-toggle">
-                <span class="slider"></span>
-            </label>
-            <span id="login-label">Login</span>
+    <div class="product-container">
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <img src="images/mirror art/mirror1.webp" width="250" height="290" />
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
         </div>
 
-        <div id="signup-form" class="form-box">
-            <h3 class="h3">Create Your Account</h3>
-
-            <input type="text" class="input1" placeholder="Name" required><br><br>
-            <input type="email" class="input2" placeholder="Email" required><br><br>
-            <input type="password" class="input3" placeholder="Password" required><br><br>
-            <a href="">Sign Up</a>
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <img src="images/mirror art/mirror2.webp" width="250" height="290" />
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
         </div>
 
-        <div id="login-form" class="form-box" style="display: none;">
-            <h3 class="h3">Login Your Account</h3>
-            <input type="email" class="input1" placeholder="Email" required><br><br>
-            <input type="password" class="input2" placeholder="Password" required><br><br>
-            <a href="">Login</a>
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <img src="images/mirror art/mirror3.webp" width="250" height="290" />
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
         </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <img src="images/mirror art/mirror4.webp" width="250" height="290" />
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <img src="images/mirror art/mirror5.webp" width="250" height="290" />
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <img src="images/mirror art/mirror6.webp" width="250" height="290" />
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <img src="images/mirror art/mirror7.webp" width="250" height="290" />
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <img src="images/mirror art/mirror8.webp" width="250" height="290" />
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <img src="images/mirror art/mirror9.webp" width="250" height="290" />
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <img src="images/mirror art/mirror10.webp" width="250" height="290" />
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <img src="images/mirror art/mirror11.webp" width="250" height="290" />
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <img src="images/photo frame art/frame12.avif" width="250" height="290" />
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <img src="images/photo frame art/frame13.avif" width="250" height="290" />
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+        </div>
+
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <img src="images/photo frame art/frame14.avif" width="250" height="290" />
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+        </div>
+
+        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
+            <img src="images/photo frame art/frame15.avif" width="250" height="290" />
+            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
+            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
+            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
+            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
+            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
+        </div>
+
     </div>
+
 
     <!-- Footer -->
 
@@ -914,10 +945,10 @@
             <div class="footer-links">
                 <h4>Quick Links</h4><br>
                 <ul>
-                    <li><a href="#">Home</a></li>
+                    <li><a href="index">Home</a></li>
                     <li><a href="#">Shop</a></li>
-                    <li><a href="#">About us</a></li>
-                    <li><a href="#">Contact us</a></li>
+                    <li><a href="about-us.html">About us</a></li>
+                    <li><a href="contact-us.html">Contact us</a></li>
                     <li><a href="#">All Products</a></li>
                     <li><a href="#">Featured products</a></li>
                     <li><a href="#">Track Your Order</a></li>
@@ -979,22 +1010,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script>
-
-        // sign login form toggle button
-
-        $(document).ready(function () {
-            $('#form-toggle').change(function () {
-                if ($(this).is(':checked')) {
-                    $('#signup-form').slideUp();
-                    $('#login-form').slideDown();
-                } else {
-                    $('#login-form').slideUp();
-                    $('#signup-form').slideDown();
-                }
-            });
-        });
-
-
         // Toggle search input:
 
         const searchIcon = document.getElementById("search-icon");

@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>photo frame art</title>
+    <meta name="description" content="Learn more about Jensen Decors – Pakistan’s leading wall décor store. Discover our story, craftsmanship, and commitment to bringing modern art and creativity into your living spaces.">
+    <title>About Jensen Decors – Wall Art & Home Décor Experts in Pakistan</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
 
@@ -30,7 +31,7 @@
             width: 100%;
 
             background-color: #1c1919;
-            z-index: 1;
+            z-index: 6;
             position: fixed;
         }
 
@@ -40,6 +41,7 @@
             align-items: center;
             position: relative;
             z-index: 9;
+
             /* overflow: hidden; */
         }
 
@@ -71,10 +73,9 @@
 
         }
 
-        /* .nav-links>ul>li:hover {
+        /* .nav-links>ul>li:hover  {
             border-bottom: 4px solid green;
         } */
-
 
 
         .logo img {
@@ -101,7 +102,7 @@
             border-radius: 9px;
             box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.2);
             display: none;
-            width: 650px;
+            z-index: 4444;
             background-color: white;
             box-shadow: 0 0 15px #050505;
 
@@ -112,7 +113,6 @@
             font-size: 14px;
             border: 1px solid #ccc;
             border-radius: 9px;
-            width: 650px;
         }
 
         .search-close {
@@ -124,6 +124,7 @@
             right: 10px;
             bottom: 8px;
         }
+
 
         /* Sidebar Nav */
 
@@ -177,8 +178,9 @@
             font-size: 20px;
             text-align: right;
             cursor: pointer;
-            color: rgb(216, 107, 35);
+            color: rgb(21, 20, 19);
             margin-bottom: 20px;
+
         }
 
         /* Hide nav links on desktop */
@@ -246,6 +248,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
+
         .shop-menu:hover .dropdown {
             display: block;
 
@@ -262,8 +265,8 @@
         .dropdown ul li a {
             color: rgb(7, 7, 7);
             margin-left: 14px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             text-decoration: none;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         .dropdown ul li:hover {
@@ -359,90 +362,32 @@
         }
 
 
-      .product-catagry-page-main-heading {
-            margin: 140px 10vw 90px 10vw;
-            font-size: 2.7rem;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        .about-section {
+            margin: 130px 20vw;
         }
 
-        .product-catagry-page-main-heading::after {
+        .about-section h1 {
+            text-align: center;
+            /* text-decoration: underline black 2px; */
+            margin: 40px;
+
+        }
+
+        .about-section h1::after {
             content: "";
-            width: 100%;
-            height: 1px;
+            width: 34vw;
             display: block;
-            margin: 15px 0vw;
+            height: 2px;
             background-color: #201e1e;
+            margin: 25px auto;
         }
 
-        /* .hr1 {
-            width: 80vw;
-            margin-left: 4.5vw;
-            margin-top: -50px;
-        } */
-
-
-        /* product */
-
-
-        .product-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 50px;
-            margin: 50px 10vw;
-
-        }
-
-        .product:hover {
-            box-shadow: 1px 6px 10px rgb(147, 143, 143);
-            transform: scale(1.05);
-            transition: all 0.3s ease-in-out;
-            border-radius: 7px;
-            border: 1px solid green;
-        }
-
-        .product {
-            padding: 8px;
-
-        }
-
-        .product img {
-            border-top-left-radius: 7px;
-            border-top-right-radius: 7px;
-        }
-
-        .product h4 {
-            font-size: 12px;
-            font-weight: 400;
-            color: #8f8282;
-            padding: 4px 0;
+        .about-section p {
+            text-align: center;
+            padding: 10px;
         }
 
 
-        .product-cart {
-            display: inline-block;
-            margin-top: 14px;
-            margin-left: 33px;
-            border: 1px solid rgba(235, 9, 9, 0.227);
-            background-color: #fb55083b;
-            padding: 2px 0px 0px 12px;
-            border-radius: 34px;
-            margin-top: 11px;
-            width: 40px;
-            margin-bottom: 12px;
-
-
-        }
-
-        .product-cart:hover {
-            background-color: #082cfb1a;
-            transform: scale(1.2);
-        }
-
-        .product-cart img {
-            width: 16px;
-        }
 
 
         /* footer */
@@ -473,7 +418,7 @@
 
         .footer-links h4,
         .footer-social h4 {
-
+            margin-bottom: -3px;
             color: #d86b23;
             margin-top: 30px;
         }
@@ -525,7 +470,7 @@
         .footer-logo img {
             margin: 6px;
             margin-bottom: 30px;
-            margin-top: 37px;
+            margin-top: 40px;
 
         }
 
@@ -570,14 +515,6 @@
                 margin-left: 2px;
             }
 
-            .search-box {
-                width: 330px;
-            }
-
-            .search-box input {
-                width: 330px;
-            }
-
 
             .footer-container {
                 margin-left: 8px;
@@ -604,9 +541,14 @@
                 margin-top: -1px;
             }
 
-            .product-catagry-page-main-heading {
-                font-size: 1.9rem;
+            .about-section {
+                margin: 2vw;
             }
+
+            .about-section h1 {
+                margin: 1vw;
+            }
+
 
         }
     </style>
@@ -619,8 +561,7 @@
             <div class="navbar">
                 <!-- Logo -->
                 <div class="logo">
-                    <a href="index.html"><img src="jensen-decors-high-resolution-logo-transparent.png"
-                            alt="jensen decors"></a>
+                    <img src="jensen-decors-high-resolution-logo-transparent.png" alt="jensen decors">
                 </div>
 
 
@@ -637,7 +578,7 @@
                                 <ul>
                                     <li class="shop-menu1">
 
-                                        <a href="metal wall art.html">Metal wall art</a>
+                                        <a href="metal-wall-art.html">Metal wall art</a>
                                         <i class="fa fa-angle-right" style="margin-left: 73px;"></i>
                                         <ul class="dropdown1">
 
@@ -653,7 +594,7 @@
 
                                     <li class="shop-menu1">
 
-                                        <a href="wall papers.html">Wall papers</a>
+                                        <a href="wall-papers.html">Wall papers</a>
                                         <i class="fa fa-angle-right" style="margin-left: 88px;"></i>
                                         <ul class="dropdown1 dropdown2">
 
@@ -671,7 +612,7 @@
 
                                     <li class="shop-menu1">
 
-                                        <a href="photo frame art.html">Photo frame art</a>
+                                        <a href="photo-frame-art.html">Photo frame art</a>
                                         <i class="fa fa-angle-right" style="margin-left: 58px;"></i>
                                         <ul class="dropdown1 dropdown3">
 
@@ -687,7 +628,7 @@
 
                                     <li class="shop-menu1">
 
-                                        <a href="mirror art.html">Mirror art</a>
+                                        <a href="mirror-art.html">Mirror art</a>
                                         <i class="fa fa-angle-right" style="margin-left: 102px;"></i>
                                         <ul class="dropdown1 dropdown4">
 
@@ -704,7 +645,7 @@
 
                                     <li class="shop-menu1">
 
-                                        <a href="wall shelves.html">Wall shelves</a>
+                                        <a href="wall-shelves.html">Wall shelves</a>
                                         <i class="fa fa-angle-right" style="margin-left: 86px;"></i>
                                         <ul class="dropdown1 dropdown5">
 
@@ -721,7 +662,7 @@
 
                                     <li class="shop-menu1">
 
-                                        <a href="wall mounted animals.html">Wall mounted animals</a>
+                                        <a href="wall-mounted-animals.html">Wall mounted animals</a>
                                         <i class="fa fa-angle-right" style="margin-left: 10px;"></i>
                                         <ul class="dropdown1 dropdown6">
 
@@ -740,8 +681,8 @@
 
                         </li>
 
-                        <li><a href="about us.html">About us</a></li>
-                        <li><a href="contact us.html">Contact us</a></li>
+                        <li><a href="about-us.html">About us</a></li>
+                        <li><a href="contact-us.html">Contact us</a></li>
 
                     </ul>
                 </div>
@@ -749,7 +690,7 @@
                 <!-- Icons -->
                 <div class="icons">
                     <i class="fa fa-search" id="search-icon"></i>
-                    <i class="fa fa-user"></i>
+                    <a href="sign-up-&-login-form.html"><i class="fa fa-user"></i></a>
                     <i class="fa-solid fa-cart-shopping"></i>
                     <i class="fa fa-bars" id="menu-toggle"></i>
                 </div>
@@ -767,158 +708,47 @@
     <div class="sidebar" id="sidebar">
         <div class="close-btn" id="close-sidebar"><i class="fa fa-times"></i></div>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <a href="sign up & login form.html"><i class="fa fa-user"></i></a>
-            <li><a href="about us.html">About us</a></li>
-            <li><a href="contact us.html">Contact us</a></li>
+            <li><a href="index">Home</a></li>
+            <li><a href="about-us.html">About us</a></li>
+            <li><a href="contact-us.html">Contact us</a></li>
+            <li><a href="#">Shop</a></li>
         </ul>
     </div>
 
-
-    <div class="product-catagry-page-main-heading">Photo Frame Art</div>
-
-    <div class="product-container">
-
-        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
-            <img src="images/photo frame art/photoframe1.avif" width="250" height="290" />
-            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
-            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
-            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
-            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
-            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
-        </div>
-
-        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
-            <img src="images/photo frame art/frame2.avif" width="250" height="290" />
-            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
-            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
-            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
-            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
-            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
-        </div>
-
-        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
-            <img src="images/photo frame art/frame3.avif" width="250" height="290" />
-            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
-            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
-            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
-            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
-            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
-        </div>
-
-        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
-            <img src="images/photo frame art/frame4.avif" width="250" height="290" />
-            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
-            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
-            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
-            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
-            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
-
-        </div>
-
-        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
-            <img src="images/photo frame art/frame5.avif" width="250" height="290" />
-            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
-            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
-            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
-            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
-            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
-
-        </div>
-
-        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
-            <img src="images/photo frame art/frame6.avif" width="250" height="290" />
-            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
-            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
-            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
-            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
-            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
-        </div>
-
-        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
-            <img src="images/photo frame art/frame7.avif" width="250" height="290" />
-            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
-            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
-            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
-            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
-            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
-        </div>
-
-        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
-            <img src="images/photo frame art/frame8.avif" width="250" height="290" />
-            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
-            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
-            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
-            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
-            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
-        </div>
-
-        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
-            <img src="images/photo frame art/frame9.avif" width="250" height="290" />
-            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
-            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
-            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
-            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
-            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
-        </div>
-
-        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
-            <img src="images/photo frame art/frame10.avif" width="250" height="290" />
-            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
-            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
-            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
-            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
-            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
-        </div>
-
-        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
-            <img src="images/photo frame art/frame11.avif" width="250" height="290" />
-            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
-            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
-            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
-            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
-            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
-        </div>
-
-        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
-            <img src="images/photo frame art/frame12.avif" width="250" height="290" />
-            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
-            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
-            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
-            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
-            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
-        </div>
-
-        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
-            <img src="images/photo frame art/frame13.avif" width="250" height="290" />
-            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
-            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
-            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
-            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
-            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
-        </div>
+    <!-- About -->
 
 
-        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
-            <img src="images/photo frame art/frame14.avif" width="250" height="290" />
-            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
-            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
-            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
-            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
-            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
-        </div>
+    <div class="about-section" style="padding: 50px 10vw; background-color: #fffaf4; color: #333;">
+        <h1 style="font-size: 36px; margin-bottom: 20px; color: #d86b23;">About Jensen Decors</h1>
 
-        <div class="product" id="products" data-brand="Gloster" data-category="metal wall art">
-            <img src="images/photo frame art/frame15.avif" width="250" height="290" />
-            <h4>Solar-Powered Metal Outdoor Wall Art - Sun... </h4>
-            <span style="font-size: 12px; color: red;">Rs.</span>&nbsp;3,605
-            <span class="" style="text-decoration: line-through; font-size: 12px; color: #8f8282;">3150</span>
-            <span>&#x1F525</span><span style="font-size: 12px; color: #8f8282;">3.1k sold</span>
-            <div class="product-cart"><img src="add-to-cart-50.png" alt="cart"></div>
-        </div>
+        <p style="font-size: 18px; line-height: 1.8; margin-bottom: 20px;">
+            Welcome to <strong>Jensen Decors</strong>, your one-stop destination for premium and stylish wall décor. We
+            believe your walls deserve more than just paint — they deserve to tell a story. At Jensen Decors, we turn
+            blank walls into bold expressions.
+        </p>
 
+        <p style="font-size: 18px; line-height: 1.8; margin-bottom: 20px;">
+            Established with a passion for creative design and quality craftsmanship, Jensen Decors offers a wide range
+            of products, including <em>metal wall art, photo frames, wallpapers, mirror art, wall shelves, and
+                wall-mounted animal pieces</em>. Every item in our collection is curated to bring charm, elegance, and
+            individuality to your space.
+        </p>
+
+        <p style="font-size: 18px; line-height: 1.8; margin-bottom: 20px;">
+            Whether you're decorating a cozy home or a modern office, we offer décor solutions that match your
+            personality and enhance your surroundings. Our goal is to make your shopping experience easy, affordable,
+            and satisfying.
+        </p>
+
+        <p style="font-size: 18px; line-height: 1.8; margin-bottom: 20px;">
+            Thank you for choosing Jensen Decors. We’re excited to be part of your décor journey. Let’s create something
+            beautiful together.
+        </p>
+
+        <p style="font-size: 18px; font-weight: bold; margin-top: 30px;">
+            — The Jensen Decors Team
+        </p>
     </div>
-
 
     <!-- Footer -->
 
@@ -927,8 +757,7 @@
 
 
             <div class="footer-logo">
-                <a href="index.html"><img src="jensen-decors-high-resolution-logo-transparent.png" alt="" width="130px"
-                        height="90px"></a>
+                <img src="jensen-decors-high-resolution-logo-transparent.png" alt="" width="130px" height="90px">
 
                 <div class="app-download">
                     <h4>Download our app</h4>
@@ -946,8 +775,8 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="#">Shop</a></li>
-                    <li><a href="about us.html">About us</a></li>
-                    <li><a href="contact us.html">Contact us</a></li>
+                    <li><a href="about-us.html">About us</a></li>
+                    <li><a href="contact-us.html">Contact us</a></li>
                     <li><a href="#">All Products</a></li>
                     <li><a href="#">Featured products</a></li>
                     <li><a href="#">Track Your Order</a></li>
@@ -984,7 +813,7 @@
                 <h4>Contact</h4><br>
                 <ul>
                     <li><a href="#">WhatsApp: +923152893207</a></li><br>
-                    <li><a href="#">Email: pyariwalls@gmail.com</a></li><br>
+
                     <li><a href="#">Outlet #1: Metro Cash n Carry Parking, Thokar Niaz Baig, Lahore</a></li><br>
                     <li><a href="#">Outlet #2 : 1st floor, kiddyLand, Besides Al-Nassar-PIA Main Boulevard, Lahore</a>
                     </li><br>

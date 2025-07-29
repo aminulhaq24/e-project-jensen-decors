@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn more about Jensen Decors – Pakistan’s leading wall décor store. Discover our story, craftsmanship, and commitment to bringing modern art and creativity into your living spaces.">
+    <meta name="description"
+        content="Learn more about Jensen Decors – Pakistan’s leading wall décor store. Discover our story, craftsmanship, and commitment to bringing modern art and creativity into your living spaces.">
     <title>About Jensen Decors – Wall Art & Home Décor Experts in Pakistan</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
@@ -363,31 +364,48 @@
 
 
         .about-section {
-            margin: 130px 20vw;
+            padding: 50px 20px;
+            background-color: #fffaf4;
+            color: #333;
+            text-align: center;
         }
 
         .about-section h1 {
-            text-align: center;
-            /* text-decoration: underline black 2px; */
-            margin: 40px;
-
+            font-size: 36px;
+            margin-top: 100px;
+            margin-bottom: 40px;
+            color: #d86b23;
+            position: relative;
         }
 
         .about-section h1::after {
             content: "";
-            width: 34vw;
             display: block;
+            width: 200px;
             height: 2px;
             background-color: #201e1e;
-            margin: 25px auto;
+            margin: 20px auto 0;
         }
 
-        .about-section p {
-            text-align: center;
-            padding: 10px;
+        .about-block {
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+            padding: 0 15px;
         }
 
+        .about-block p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
 
+        .about-block img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            display: block;
+            margin: 0 auto;
+        }
 
 
         /* footer */
@@ -541,12 +559,12 @@
                 margin-top: -1px;
             }
 
-            .about-section {
-                margin: 2vw;
+            .about-section h1 {
+                font-size: 28px;
             }
 
-            .about-section h1 {
-                margin: 1vw;
+            .about-block p {
+                font-size: 16px;
             }
 
 
@@ -718,36 +736,46 @@
     <!-- About -->
 
 
-    <div class="about-section" style="padding: 50px 10vw; background-color: #fffaf4; color: #333;">
-        <h1 style="font-size: 36px; margin-bottom: 20px; color: #d86b23;">About Jensen Decors</h1>
+    <div class="about-section">
+        <h1>About Jensen Decors</h1>
 
-        <p style="font-size: 18px; line-height: 1.8; margin-bottom: 20px;">
-            Welcome to <strong>Jensen Decors</strong>, your one-stop destination for premium and stylish wall décor. We
-            believe your walls deserve more than just paint — they deserve to tell a story. At Jensen Decors, we turn
-            blank walls into bold expressions.
-        </p>
+        <div class="about-block">
+            <p>
+                Welcome to <strong>Jensen Decors</strong>, your one-stop destination for premium and stylish wall décor.
+                We
+                believe your walls deserve more than just paint — they deserve to tell a story. At Jensen Decors, we
+                turn
+                blank walls into bold expressions.
+            </p>
+            <img src="gregory-hayes-1Cb-rNMO10Y-unsplash.jpg" alt="owner of jensen decors">
+        </div>
 
-        <p style="font-size: 18px; line-height: 1.8; margin-bottom: 20px;">
-            Established with a passion for creative design and quality craftsmanship, Jensen Decors offers a wide range
-            of products, including <em>metal wall art, photo frames, wallpapers, mirror art, wall shelves, and
-                wall-mounted animal pieces</em>. Every item in our collection is curated to bring charm, elegance, and
-            individuality to your space.
-        </p>
+        <div class="about-block">
+            <p>
+                Established with a passion for creative design and quality craftsmanship, Jensen Decors offers a wide
+                range of products, including <em>metal wall art, photo frames, wallpapers, mirror art, wall shelves, and
+                wall-mounted animal pieces</em>. Every item in our collection is curated to bring charm, elegance,
+                and
+                individuality to your space.
+            </p>
+            <img src="gregory-hayes-h5cd51KXmRQ-unsplash.jpg" alt="owner of jensen decors">
+        </div>
 
-        <p style="font-size: 18px; line-height: 1.8; margin-bottom: 20px;">
-            Whether you're decorating a cozy home or a modern office, we offer décor solutions that match your
+        <div class="about-block">
+            <p>
+                Whether you're decorating a cozy home or a modern office, we offer décor solutions that match your
             personality and enhance your surroundings. Our goal is to make your shopping experience easy, affordable,
             and satisfying.
-        </p>
+            </p>
+        </div>
 
-        <p style="font-size: 18px; line-height: 1.8; margin-bottom: 20px;">
-            Thank you for choosing Jensen Decors. We’re excited to be part of your décor journey. Let’s create something
+        <div class="about-block">
+            <p>
+               Thank you for choosing Jensen Decors. We’re excited to be part of your décor journey. Let’s create something
             beautiful together.
-        </p>
-
-        <p style="font-size: 18px; font-weight: bold; margin-top: 30px;">
-            — The Jensen Decors Team
-        </p>
+            </p>
+            <p><strong>— The Jensen Decors Team</strong></p>
+        </div>
     </div>
 
     <!-- Footer -->
